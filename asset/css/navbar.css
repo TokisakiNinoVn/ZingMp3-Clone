@@ -1,0 +1,20 @@
+
+#navbar {
+    width: 240px;
+    height: 100vh;
+    background-color: rgb(187, 200, 200);
+    /* border: 1px solid black; */
+}
+.zing_logo {
+    display: flex;
+}
+.avt_author {
+    width: 50px;
+    border-radius: 50%;
+}
+.link_home a {
+
+}
+.logo_text p {
+    display: inline;
+}
