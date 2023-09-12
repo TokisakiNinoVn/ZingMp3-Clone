@@ -1,9 +1,78 @@
 .header {
     width: 1288px;
     height: 70px;
-    background-color: brown;
-    opacity: 0.8;
+    background-color: rgb(23, 15, 35);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     position: fixed;
     top: 0;
+    z-index: 0;
 }
+
+/* ________________________[ header left ]_______________________________________________________ */
+.header_left {
+    display: flex;
+    align-items: center;
+    width: 870px;
+}
+.back_left, .back_right {
+    font-size: 24px;
+    margin: 7px;
+}
+
+.search_button {
+    display: flex;
+    border-radius: 20px;
+    background-color: rgb(47, 39, 57);
+    align-items: center;
+    width: 440px;
+}
+.search_icon {
+    padding: 4px;
+    color: rgb(247, 247, 247);
+    font-size: 20px;
+    margin-top: 2px;
+}
+.input_ {
+    height: 100%;
+}
+.input_ input {
+    width: 372px;
+    padding: 7px 7px;
+    background-color: rgb(47, 39, 57);
+    color: antiquewhite;
+    border: unset;
+}
+.input_ input:focus {
+    border: unset;
+}
+
+
+
+
+
+/* ________________________[ header right ]_______________________________________________________ */
+.header_right {
+    display: flex;
+}
+
+.header_right a img {
+    width: 38px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
