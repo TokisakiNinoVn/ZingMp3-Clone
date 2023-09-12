@@ -1,31 +1,47 @@
-
+a {
+    color: azure;
+}
 #navbar {
     width: 240px;
     height: 100vh;
-    background-color: rgb(187, 200, 200);
+    background-color: rgb(34, 26, 45);
     /* border: 1px solid black; */
+    color: azure;
 
     position: relative;
 }
+/* ________________________[ logo ]_______________________________________________________ */
 .zing_logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 70px;
 }
 .avt_author {
-    width: 50px;
+    width: 40px;
     border-radius: 50%;
 }
 .link_home a {
 
 }
+.logo_text {
+    margin-left: 10px;
+}
 .logo_text p {
     display: inline;
+    font-weight: bold;
+    font-size: 30px;
 }
-
+/* ________________________[ select_navbar ]_______________________________________________________ */
 .select_navbar li p {
     display: inline;
 }
 
+
+/* ________________________[ navbar_scroll ]_______________________________________________________ */
+
+
+/* ________________________[ navbar_add--playlist ]_______________________________________________________ */
 .navbar_add--playlist {
     height: 54px;
     width: 100%;
