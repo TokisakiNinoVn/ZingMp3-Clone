@@ -5,11 +5,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    opacity: .8;
+    /* opacity: .8; */
 
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 3;
 }
 .control_header {
     max-width: 1170px;

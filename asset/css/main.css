@@ -5,6 +5,7 @@
 
     display: flex;
     justify-content: center;
+    z-index: 0;
 }
 
 body {
@@ -26,3 +27,47 @@ body {
     width: 0px;
     /* color: #fb0707; */
 }
+
+/* _____________________________ Banner ________________________ */
+.banner {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 28px;
+
+    position: relative;
+}
+
+.banner .click_banner {
+    /* display: none; */
+
+    position: absolute;
+    background-color: rgba(43, 44, 45, 0.663);
+    font-size: 38px;
+    color: rgb(176, 166, 166);
+    padding: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    bottom: 40%;
+}
+
+.banner .click-left {
+    left: 20px;
+}
+.banner .click-right {
+    right: 20px;
+}
+
+
+.banner .click_banner:hover {
+
+}
+
+.banner img {
+    width: 370px;
+    border-radius: 8px;
+}
+
+
+
