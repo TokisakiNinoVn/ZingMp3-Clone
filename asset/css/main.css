@@ -58,19 +58,17 @@ body {
 .banner .click-right {
     right: 10px;
 }
+
 .banner_all-img {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.banner .click_banner:hover {
-
-}
-
 div img {
     width: 370px;
     border-radius: 8px;
+    transition: opacity 1s ease-in-out;
 }
 
 
