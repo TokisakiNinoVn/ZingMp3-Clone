@@ -24,3 +24,18 @@ changeImage();
 
 // Thiết lập hàm thay đổi ảnh sau mỗi 3 giây
 setInterval(changeImage, 3000);
+
+const clickLeftBtn = document.getElementById("click-left");
+const clickRightBtn = document.getElementById("click-right");
+
+// Thêm event listener cho nút click-left để chuyển đến ảnh trước đó
+clickLeftBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + link_img.length) % link_img.length;
+    changeImage();
+});
+
+// Thêm event listener cho nút click-right để chuyển đến ảnh kế tiếp
+clickRightBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % link_img.length;
+    changeImage();
+});

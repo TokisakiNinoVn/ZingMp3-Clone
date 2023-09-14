@@ -57,22 +57,40 @@ li {
 }
 .select_navbar a:nth-child(1) li{
     background-color: rgb(59, 61, 61);
-    border-left: 4px solid rgb(238, 0, 255);
+    border-left: 2px solid rgb(238, 0, 255);
 }
 
-.select_navbar a li span {
+.select_navbar a li span,
+.item_scroll a li span,
+.navbar_item a li span {
     margin-left: 10px;
+    min-width: 150px;
+
+    display: flex;
+    align-items: center;
 }
 .select_navbar a li p {
     display: inline;
     background-color: red;
     color: white;
     padding: 3px;
+    margin-left: 10px;
     border-radius: 3px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 10px;
 }
+
+a li ion-icon {
+    display: none;
+    font-size: 22px;
+}
+
+a:hover ion-icon {
+    display: flex;
+    color: violet;
+}
+
 /* ________________________[ navbar_scroll ]_______________________________________________________ */
 .navbar_scroll {
     margin-top: 15px;

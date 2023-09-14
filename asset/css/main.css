@@ -38,20 +38,22 @@ body {
 }
 
 .banner .click_banner {
-    /* display: none; */
-
+    display: none;
     position: absolute;
     background-color: rgba(43, 44, 45, 0.663);
     font-size: 38px;
     color: rgb(176, 166, 166);
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
 
-    display: flex;
+
     justify-content: center;
     bottom: 40%;
 }
-
+.banner .click_banner:hover {
+    background-color: rgba(71, 72, 73, 0.729);
+}
 .banner .click-left {
     left: 10px;
 }
@@ -71,5 +73,8 @@ div img {
     transition: opacity 1s ease-in-out;
 }
 
+.banner:hover .click_banner {
+    display: flex;
+}
 
 
