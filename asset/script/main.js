@@ -1,24 +1,26 @@
-const bannerImagesContainer = document.querySelector('.banner_images_container');
-const bannerImages = document.querySelectorAll('.banner_img');
-const imageCount = bannerImages.length;
-let currentIndex = 0;
+const link_img = [
+    {
+      url: "./asset/images/banner.jpg",
+    },
+    {
+      url: "./asset/images/banner2.jpg",
+    },
+    {
+      url: "./asset/images/banner3.jpg",
+    },
+  ];
+  const bannerImgs = document.querySelectorAll(".banner_img");
+  let currentIndex = 0;
 
-function changeImage() {
-    // Ẩn tất cả các ảnh
-    // bannerImages.forEach(img => {
-    //     img.style.display = 'none';
-    // });
+  function changeImage() {
+    bannerImgs.forEach((img, index) => {
+      img.src = link_img[(currentIndex + index) % link_img.length].url;
+    });
+    currentIndex = (currentIndex + 1) % link_img.length;
+  }
 
-    // // Hiển thị ảnh tiếp theo
-    // bannerImages[currentIndex].style.display = 'block';
+  // Hiển thị ảnh ban đầu
+  changeImage();
 
-    // Tăng vị trí của ảnh hiện tại
-    currentIndex++;
-
-    // Nếu đã hiển thị tất cả ảnh, quay lại ảnh đầu tiên
-    if (currentIndex >= imageCount) {
-        currentIndex = 0;
-    }
-}
-
-setInterval(changeImage, 3000); // Thay đổi ảnh mỗi 3 giây
+  // Thiết lập hàm thay đổi ảnh sau mỗi 3 giây
+  setInterval(changeImage, 4000);

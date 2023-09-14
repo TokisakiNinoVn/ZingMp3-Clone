@@ -31,7 +31,7 @@ body {
 /* _____________________________ Banner ________________________ */
 .banner {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 28px;
 
     position: relative;
@@ -53,18 +53,22 @@ body {
 }
 
 .banner .click-left {
-    left: 20px;
+    left: 10px;
 }
 .banner .click-right {
-    right: 20px;
+    right: 10px;
 }
-
+.banner_all-img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .banner .click_banner:hover {
 
 }
 
-.banner img {
+div img {
     width: 370px;
     border-radius: 8px;
 }
