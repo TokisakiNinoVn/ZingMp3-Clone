@@ -86,7 +86,7 @@ a li ion-icon {
     font-size: 22px;
 }
 
-a:hover ion-icon {
+#navbar a:hover ion-icon {
     display: flex;
     color: violet;
 }

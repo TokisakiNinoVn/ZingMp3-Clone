@@ -14,7 +14,7 @@ body {
 
 #main_scroll {
     width: 1170px;
-    border: 1px solid rgba(244, 237, 232, 0.553);
+    /* border: 1px solid rgba(244, 237, 232, 0.553); */
     margin-top: 70px;
     height: 1000px;
 }
@@ -74,11 +74,13 @@ div img {
     display: flex;
 }
 
-/* _____________________________ recently ________________________ */
+/* _____________________________ recently _____________________________________ */
 .recently {
     margin-top: 40px;
+    padding: 10px;
 
 }
+
 .recently_tittle {
     color: aliceblue;
     width: 100%;
@@ -87,33 +89,38 @@ div img {
     margin-bottom: 20px;
 }
 
-.recently_item {
-    display: flex;
-    width: 100%;
-    min-width: 171px;
-    padding: 10px;
-}
 .recently_tittle span {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
+}
+
+.recently_tittle a {
+    display: flex;
+    align-items: center;
 }
 .recently_tittle a span{
     font-weight: unset;
-    font-size: 18px;
+    font-size: 15px;
+    color: rgba(240, 248, 255, 0.703);
 }
+/*_____________ Circle ___________________________________*/
+.recently_item {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
 .item_circle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
     color: white;
-
 }
 
 .in_img {
     position: relative;
 }
-.img_boder {
+
+.div_boder {
     width: 143px;
     height: 143px;
     border-radius: 50%;
@@ -124,12 +131,12 @@ div img {
 
 }
 
-.img_boder img {
+.div_boder img {
     width: 143px;
     z-index: 2;
 }
 
-.img_boder:hover img {
+.div_boder:hover img {
     transition: all .8s ease;
     transform: scale(1.1);
     opacity: .6;
@@ -139,7 +146,7 @@ div img {
 .in_img .img54 {
     width: 52px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.0);
+    border: 2px solid rgb(0, 0, 0);
     position: absolute;
     bottom: 7px;
     left: 70%;
@@ -150,10 +157,18 @@ div img {
     left: 32%;
     bottom: 32%;
     font-size: 45px;
+    color: rgb(238, 223, 223);
     display: none;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.in_img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
 
 }
-.img_boder:hover ion-icon {
+
+.div_boder:hover ion-icon {
     display: flex;
 }
 
@@ -175,3 +190,78 @@ div img {
     margin: 20px auto;
     font-weight: bold;
 }
+
+
+/*_____________ squar ________________________________*/
+.item_quare {
+    margin: 0 40px;
+    max-width: 171px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_img {
+    position: relative;
+    width: 143px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.div_img a img {
+    width: 143px;
+    opacity: .8;
+    z-index: 1;
+}
+
+.div_img:hover a img {
+    transition: all .8s ease;
+    opacity: .6;
+    transform: scale(1.1);
+}
+
+.div_icon--in--img {
+    position: absolute;
+    width: 100%;
+    bottom: 35%;
+    left: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div_icon--in--img ion-icon {
+    font-size: 28px;
+    color: white;
+    display: none;
+    padding: 4px;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.div_icon--in--img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
+
+}
+
+.div_icon--in--img ion-icon:nth-child(2) {
+    font-size: 40px;
+}
+
+.div_img:hover .div_icon--in--img ion-icon {
+    display: flex;
+}
+
+.item_quare a {
+    width: 143px;
+    color: white;
+}
+
+.item_quare a p:hover {
+    color: rgb(244, 10, 252);
+    text-decoration: underline;
+}
+
+/* _____________________________ recently _____________________________________ */
