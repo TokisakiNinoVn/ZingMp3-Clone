@@ -13,19 +13,16 @@ body {
 }
 
 #main_scroll {
-    width: 1180px;
-    background-color: rgb(51, 48, 43);
-    border: 1px solid rgb(255, 98, 0);
+    width: 1170px;
+    border: 1px solid rgba(244, 237, 232, 0.553);
     margin-top: 70px;
     height: 1000px;
 }
 #main::-webkit-scrollbar {
     width: 0px;
-    /* color: #fb0707; */
 }
 #main_scroll::-webkit-scrollbar {
     width: 0px;
-    /* color: #fb0707; */
 }
 
 /* _____________________________ Banner ________________________ */
@@ -77,4 +74,53 @@ div img {
     display: flex;
 }
 
+/* _____________________________ recently ________________________ */
+.recently {
+    margin-top: 40px;
 
+}
+.recently_tittle {
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recently_item {
+    display: flex;
+    width: 100%;
+    min-width: 171px;
+    padding: 10px;
+}
+.recently_tittle span {
+    font-weight: bold;
+    font-size: 24px;
+}
+.recently_tittle a span{
+    font-weight: unset;
+    font-size: 18px;
+}
+.item_circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+
+}
+
+.in_img {
+    position: relative;
+}
+
+.in_img img:nth-child(1) {
+    width: 143px;
+    border-radius: 50%;
+    border: 5px solid yellow;
+}
+
+.in_img img:nth-child(2) {
+    width: 52px;
+    border-radius: 50%;
+}

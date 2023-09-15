@@ -73,10 +73,10 @@ li {
     display: inline;
     background-color: red;
     color: white;
-    padding: 3px;
+    padding: 3px 7px;
     margin-left: 10px;
     border-radius: 3px;
-    font-weight: bold;
+    font-weight: bolder;
     text-transform: uppercase;
     font-size: 10px;
 }
