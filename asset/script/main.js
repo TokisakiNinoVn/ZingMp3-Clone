@@ -1,12 +1,23 @@
+// const link_img = [
+//     {
+//         url: "./asset/images/banner.jpg",
+//     },
+//     {
+//         url: "./asset/images/banner2.jpg",
+//     },
+//     {
+//         url: "./asset/images/banner3.jpg",
+//     },
+// ];
 const link_img = [
     {
-    url: "./asset/images/banner.jpg",
+        url: "./asset/images/Ai_hori1.jpg",
     },
     {
-    url: "./asset/images/banner2.jpg",
+        url: "./asset/images/Ai_hori4.jpg",
     },
     {
-    url: "./asset/images/banner3.jpg",
+        url: "./asset/images/Ai_hori3.jpg",
     },
 ];
 const bannerImgs = document.querySelectorAll(".banner_img");
