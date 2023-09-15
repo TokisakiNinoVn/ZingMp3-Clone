@@ -28,8 +28,6 @@ body {
 .item_quare {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .div_img {
@@ -226,19 +224,22 @@ div img {
 
 .div_img:hover a img {
     transition: all .8s ease;
-    opacity: .6;
+    opacity: .4;
     transform: scale(1.1);
 }
 
 .div_icon--in--img {
     position: absolute;
     width: 100%;
-    bottom: 35%;
-    left: 0;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .div_icon--in--img ion-icon {
@@ -276,25 +277,25 @@ div img {
     color: white;
 }
 
-.item_quare-big {
-    max-width: 240px;
+.all-item--new_release {
+    display: flex;
+    justify-content: space-between;
 }
 
-.div_img-big {
-    width: 212px;
+.item_quare-big,
+.item_quare p {
+    max-width: 212px;
+
 }
 
+.div_img-big,
+.new_release .div_icon--in--img,
 .new_release a img {
     width: 212px;
 }
 
 .item_quare p {
-    max-width: 212px;
     margin: 10px 0px 0;
-}
-
-.new_release p:hover {
-    color: blueviolet;
 }
 
 .singer-name {
@@ -302,7 +303,11 @@ div img {
     font-size: 14px;
 }
 
-.new_release p a:hover {
+.new_release p:hover,
+.singer-name:hover {
+    color: blueviolet;
+}
+
+.singer-name:hover {
     text-decoration: underline;
-    color:blueviolet;
 }
