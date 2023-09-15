@@ -13,7 +13,6 @@ body {
 
 #main_scroll {
     width: 1170px;
-    /* border: 1px solid rgba(244, 237, 232, 0.553); */
     margin-top: 70px;
     height: 2000px;
 }
@@ -79,11 +78,20 @@ body {
     width: 100%;
 }
 
-div img {
-    width: 370px;
+div img.banner_img {
+    width: 368px;
     border-radius: 8px;
     transition: opacity 1s ease-in-out;
+    border: 1px double rgb(188, 7, 249);
+    box-shadow: rgba(159, 6, 247, 0.666) 0px 3px 8px;
 }
+/* div img {
+    width: 368px;
+    border-radius: 8px;
+    transition: opacity 1s ease-in-out;
+    border: 1px double rgb(188, 7, 249);
+    box-shadow: rgba(159, 6, 247, 0.666) 0px 3px 8px;
+} */
 
 .banner:hover .click_banner {
     display: flex;
@@ -391,6 +399,14 @@ div img {
     padding: 5px;
     border-radius: 50%;
     display: none;
+}
+
+.one_item--mph ion-icon:nth-child(n) {
+    margin-left: 20px;
+}
+
+.one_item--mph a ion-icon:nth-child(n) {
+    margin-left: 0;
 }
 
 .one_item--mph ion-icon:hover {

@@ -43,3 +43,9 @@ const container = document.getElementById('all-item--mph');
 for (let i = 0; i < 11; i++) {
     container.innerHTML += htmlCode_;
 }
+
+const html_colab = `<img src="./asset/images/Ai_hori5.jpg" alt="">`;
+const colap = document.getElementById('all__item__colab');
+for (let i = 0; i < 17; i++) {
+    colap.innerHTML += html_colab;
+}
