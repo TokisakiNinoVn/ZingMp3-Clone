@@ -82,9 +82,13 @@ div img.banner_img {
     width: 368px;
     border-radius: 8px;
     transition: opacity 1s ease-in-out;
+}
+
+div img.banner_img:hover {
     border: 1px double rgb(188, 7, 249);
     box-shadow: rgba(159, 6, 247, 0.666) 0px 3px 8px;
 }
+
 /* div img {
     width: 368px;
     border-radius: 8px;
