@@ -1,4 +1,4 @@
-const htmlCode = `
+const html_wan_to_list = `
 <div class="item_quare item_quare-big">
 <div class="div_img .div_img-big">
     <a href="">
@@ -12,13 +12,13 @@ const htmlCode = `
 </div>
 <p class="decrip_item">Yaosobi</p>
 <a class="singer-name" href="">Hoshino Ai</a>
-</div>
+</div>   
 `;
 
-// const new_release = document.getElementById('list-like');
-// for (let i = 0; i < 4; i++) {
-//     new_release.innerHTML += htmlCode;
-// }
+const wantList = document.getElementById('list-like');
+for (let i = 0; i < 5; i++) {
+    wantList.innerHTML += html_wan_to_list;
+}
 
 
 const htmlCode_ = `

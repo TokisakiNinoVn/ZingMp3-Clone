@@ -180,7 +180,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 
@@ -213,13 +212,5 @@ body {
 .item_quare a p:hover {
     color: rgb(244, 10, 252);
 }
-
-
-
-
-
-
-
-
 
 

@@ -3,7 +3,7 @@
     color: white;
 }
 
-.all-item--want-to-listen {
+.all-item-want-to-listen {
     display: flex;
     justify-content: space-between;
 }

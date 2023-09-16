@@ -54,12 +54,9 @@
     border: unset;
 }
 .input_ input:focus {
+    outline: unset;
     border: unset;
 }
-
-
-
-
 
 /* ________________________[ header right ]_______________________________________________________ */
 .header_right {

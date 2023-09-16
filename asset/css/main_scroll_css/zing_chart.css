@@ -1,8 +1,8 @@
-#zing_char {
+#zing_chart {
     margin: 40px 0;
     padding: 30px 20px;
     width: 100%;
-    background-color: rgba(155, 60, 184, 0.226);
+    background-color: rgba(106, 53, 121, 0.242);
     border-radius: 10px;
 }
 
@@ -101,10 +101,14 @@
 
 
 /* _____________________________________________ zing chart week ____________________________________________ */
+.zing_chart {
+    padding: 10px 0;
+}
 .zing-chart-week {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .img-div {
