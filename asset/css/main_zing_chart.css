@@ -1,0 +1,100 @@
+#zing_char {
+    margin-top: 40px;
+    padding: 30px 20px;
+    width: 100%;
+    background-color: rgba(155, 60, 184, 0.226);
+    border-radius: 10px;
+}
+
+.tittle_zingchart {
+    display: flex;
+    align-items: center;
+}
+
+.tittle_zingchart span {
+    font-size: 30px;
+    color: #fcfcfc;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+
+    background: -webkit-linear-gradient(45deg, #ea6421, #b001f0, #01b4f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.all_item-zing_chart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-zchart {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.one_item--zc {
+    width: 456px;
+    background-color: rgba(78, 82, 82, 0.401);
+}
+
+.one_item--zc:hover {
+    width: 456px;
+    background-color: rgba(122, 126, 126, 0.401);
+}
+
+.one_item--zc:nth-child(2),
+.one_item--zc:nth-child(3) {
+    margin-top: 10px;
+}
+
+.one_item--zc .top_number {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 0px 10px;
+    margin-right: 10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 214, 247);
+    color: unset;
+}
+.left-zchart div:nth-child(2) .top_number {
+    -webkit-text-stroke-color: rgb(247, 0, 107);
+
+}
+.left-zchart div:nth-child(3) .top_number {
+    -webkit-text-stroke-color: rgb(41, 247, 0);
+
+}
+
+.one_item--zc .persen{
+    color: aliceblue;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.one_item--zc img {
+    border-radius: 8px;
+}
+
+.tittle_zingchart ion-icon {
+    font-size: 30px;
+    color: #fcfcfc;
+    margin-left: 20px;
+}
+
+.left-zchart a.xem-them {
+    margin-top: 20px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+.left-zchart a.xem-them:hover {
+    background-color: rgba(68, 68, 66, 0.723);
+}
+
+.right-zchart img {
+    width: 649px;
+    border-radius: 10px;
+    box-shadow: rgba(183, 10, 180, 0.49) 0px 1px 2px, rgba(0, 233, 246, 0.567) 0px 2px 4px, rgba(189, 16, 128, 0.558) 0px 4px 8px, rgba(193, 49, 17, 0.448) 0px 8px 16px, rgba(50, 27, 201, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
