@@ -1,33 +1,4 @@
-/* _____________________________ recently _____________________________________ */
-.recently {
-    margin-top: 40px;
-    padding: 10px;
-
-}
-
-.recently_tittle {
-    color: aliceblue;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.recently_tittle span {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.recently_tittle a {
-    display: flex;
-    align-items: center;
-}
-.recently_tittle a span{
-    font-weight: unset;
-    font-size: 15px;
-    color: rgba(240, 248, 255, 0.703);
-}
-/*_____________ Circle ___________________________________*/
+/*_____________ One Circle item ___________________________________*/
 .recently_item {
     display: flex;
     width: 100%;
@@ -113,6 +84,37 @@
 .decrip_item {
     margin: 20px auto;
     font-weight: bold;
+}
+
+
+
+/* _____________________________ recently _____________________________________ */
+.recently {
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.recently_tittle {
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recently_tittle span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.recently_tittle a {
+    display: flex;
+    align-items: center;
+}
+.recently_tittle a span{
+    font-weight: unset;
+    font-size: 15px;
+    color: rgba(240, 248, 255, 0.703);
 }
 
 

@@ -1,0 +1,128 @@
+/* _____________________________ MPH _____________________________________ */
+.mph {
+    margin-top: 40px;
+}
+
+.mph a, .mph span, .mph p, .mph ion-icon {
+    color: aliceblue;
+}
+
+.mph .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.control-aria {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 18px 0;
+}
+/*_____________ control_left ________________________________*/
+
+.control_left a {
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.296);
+    text-transform: uppercase;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+.control_left a:nth-child(1) {
+    background-color: blueviolet;
+}
+
+/*_____________ control_right ________________________________*/
+.control_right a {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/*_____________ All item ________________________________*/
+.all-item--mph {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.one_item--mph {
+    display: flex;
+    align-items: center;
+    width: 372px;
+    max-height: 80px;
+    border-radius: 8px;
+
+    padding: 10px;
+}
+
+.one_item--mph a {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.one_item--mph a ion-icon {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+}
+
+.one_item--mph ion-icon {
+    font-size: 28px;
+    padding: 5px;
+    border-radius: 50%;
+    display: none;
+}
+
+.one_item--mph ion-icon:nth-child(n) {
+    margin-left: 20px;
+}
+
+.one_item--mph a ion-icon:nth-child(n) {
+    margin-left: 0;
+}
+
+.one_item--mph ion-icon:hover {
+    background-color: rgba(132, 134, 134, 0.479);
+}
+
+.one_item--mph:hover {
+    background-color: rgb(61, 60, 59);
+}
+
+.one_item--mph:hover a ion-icon,
+.one_item--mph:hover ion-icon {
+    display: block;
+}
+
+.one_item--mph .content {
+    display: flex;
+    flex-direction: column;
+    min-width: 216px;
+
+    margin-left: 10px;
+}
+
+span.premium {
+    display: inline;
+    background-color: rgb(255, 123, 0);
+    font-weight: bold;
+    font-size: 13px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.one_item--mph a img {
+    width: 60px;
+}
+
+p.singer-name, span.time-up{
+    color: rgb(160, 157, 153);
+}

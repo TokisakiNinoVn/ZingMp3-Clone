@@ -15,13 +15,13 @@ const htmlCode = `
 </div>
 `;
 
-const new_release = document.getElementById('list-like');
-for (let i = 0; i < 4; i++) {
-    new_release.innerHTML += htmlCode;
-}
+// const new_release = document.getElementById('list-like');
+// for (let i = 0; i < 4; i++) {
+//     new_release.innerHTML += htmlCode;
+// }
 
 
-const htmlCode_ = `
+const html_mph = `
 <div class="one_item--mph">
     <a href="">
         <img src="./asset/images/Ai_1x1_keepOut.jpg" alt="">
@@ -41,54 +41,6 @@ const htmlCode_ = `
 
 const container = document.getElementById('all-item--mph');
 for (let i = 0; i < 11; i++) {
-    container.innerHTML += htmlCode_;
+    container.innerHTML += html_mph;
 }
 
-const html_colab = `<img src="./asset/images/Ai_hori5.jpg" alt="">`;
-const colap = document.getElementById('all__item__colab');
-for (let i = 0; i < 17; i++) {
-    colap.innerHTML += html_colab;
-}
-
-
-const html_top100 = `
-<div class="item_quare item_quare-big">
-<div class="div_img .div_img-big">
-    <a href="">
-        <img src="./asset/images/Ai_1x1_eye.jpg" alt="">
-        <div class="div_icon--in--img">
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
-            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-        </div>              
-    </a>
-</div>
-<p class="decrip_item">Yaosobi</p>
-<a class="singer-name" href="">Hoshino Ai</a>
-</div> `
-const top100 = document.getElementById('all_item-top100');
-for (let i = 0; i < 5; i++) {
-    top100.innerHTML += html_top100;
-}
-
-
-
-const radio_item = `<div class="item_circle radio-one-item">
-<div class="in_img">
-    <a href="">
-        <div class="div_boder">
-            <img src="./asset/images/Ai_1x1.jpg" alt="">
-            <ion-icon name="play-circle-outline"></ion-icon>
-        </div>              
-    </a>
-    <img src="./asset/images/Avt.jpg" alt="" class="img54">
-    <span>Live</span>
-</div>
-<span class="decrip_item radio_album">Yasobi</span>
-<span class="decrip_item radio_listen-er">100k đang nghe</span>
-</div> ;`
-
-const radio_music = document.getElementById('all-radio-item');
-for (let i = 0; i < 7; i++) {
-    radio_music.innerHTML += radio_item;
-}
