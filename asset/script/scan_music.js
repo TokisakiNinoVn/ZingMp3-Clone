@@ -65,30 +65,32 @@ const html_top100 = `
 </div>
 <p class="decrip_item">Yaosobi</p>
 <a class="singer-name" href="">Hoshino Ai</a>
-</div> `
-// const top100 = document.getElementById('all_item-top100');
-// for (let i = 0; i < 5; i++) {
-//     top100.innerHTML += html_top100;
-// }
+</div>
+`;
+const top100 = document.getElementById('all_item-top100');
+for (let i = 0; i < 5; i++) {
+    top100.innerHTML += html_top100;
+}
 
 
 
-const radio_item = `<div class="item_circle radio-one-item">
-<div class="in_img">
+const radio_item = `
+<div class="item_circle">
+<div class="div_contain-img">
     <a href="">
-        <div class="div_boder">
-            <img src="./asset/images/Ai_1x1.jpg" alt="">
+        <div class="div-boder-img">
+            <img src="./asset/images/Ai_1x1_idol.jpg" alt="">
             <ion-icon name="play-circle-outline"></ion-icon>
         </div>              
     </a>
-    <img src="./asset/images/Avt.jpg" alt="" class="img54">
-    <span>Live</span>
+    <img src="./asset/images/Avt.jpg" alt="" class="img-absolute">
+    <span class="live" >Live</span>
 </div>
-<span class="decrip_item radio_album">Yasobi</span>
-<span class="decrip_item radio_listen-er">100k đang nghe</span>
-</div> ;`
+<span class="decrip_item">Yasobi</span>
+<span class="view-er">1M đang nghe</span>
+</div>`;
 
-// const radio_music = document.getElementById('all-radio-item');
-// for (let i = 0; i < 7; i++) {
-//     radio_music.innerHTML += radio_item;
-// }
+const radio_music = document.getElementById('radio_hot_item');
+for (let i = 0; i < 7; i++) {
+    radio_music.innerHTML += radio_item;
+}

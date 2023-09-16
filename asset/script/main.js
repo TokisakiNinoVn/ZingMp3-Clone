@@ -11,7 +11,7 @@
 // ];
 const link_img = [
     {
-        url: "./asset/images/Ai_hori1.jpg",
+        url: "./asset/images/Ai_hori7.jpg",
     },
     {
         url: "./asset/images/Ai_hori4.jpg",

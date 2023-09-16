@@ -1,0 +1,12 @@
+#all_item-top100 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top100 a img {
+    width: 212px;
+}
+
+.top100 .decrip_item {
+    color: white;
+}

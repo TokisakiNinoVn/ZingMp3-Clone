@@ -10,16 +10,16 @@
 
 .banner .click_banner {
     display: none;
-    position: absolute;
     background-color: rgba(43, 44, 45, 0.663);
     font-size: 38px;
     color: rgb(176, 166, 166);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-
-    justify-content: center;
-    bottom: 40%;
+    
+    position: absolute;
+    bottom: 37%;
+    z-index: 2;
 }
 
 .banner .click_banner:hover {
@@ -51,6 +51,7 @@ div img.banner_img:hover {
     box-shadow: rgba(247, 6, 122, 0.666) 0px 3px 8px;
     transform: scale(.98);
     transition: .6s ease;
+    z-index: 1;
 }
 
 .banner:hover .click_banner {

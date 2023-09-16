@@ -1,0 +1,30 @@
+
+.radio_tittle {
+    margin-bottom: 10px !important;
+}
+
+.radio_tittle span {
+    margin-bottom: 10px;
+}
+
+#radio_hot_item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio_hot .main_topic-item .decrip_item {
+    margin: 18px auto 5px auto;
+}
+
+.main_topic-item .view-er {
+    font-size: 13px;
+    color: rgba(247, 247, 247, 0.415);
+    margin: auto;
+}
+
+.main_topic-item .item_circle:nth-child(2) a .div-boder-img{
+    /* border: unset; */
+    /* border: 5px solid rgb(245, 11, 11); */
+    border-top-right-radius: 5px solid rgb(245, 11, 11);
+}
