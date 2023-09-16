@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* opacity: .8; */
+    opacity: .9;
 
     position: fixed;
     top: 0;

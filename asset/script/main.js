@@ -1,14 +1,8 @@
-// const link_img = [
-//     {
-//         url: "./asset/images/banner.jpg",
-//     },
-//     {
-//         url: "./asset/images/banner2.jpg",
-//     },
-//     {
-//         url: "./asset/images/banner3.jpg",
-//     },
-// ];
+document.addEventListener('DOMContentLoaded', function () {
+    alert('Trang không có responsive, đề cử tỉ lệ màn hình 1570:996!');
+});
+
+
 const link_img = [
     {
         url: "./asset/images/Ai_hori7.jpg",

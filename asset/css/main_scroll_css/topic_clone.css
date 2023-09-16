@@ -1,0 +1,13 @@
+a.singer-name_clone {
+    width: max-content;
+    margin-top: 13px;
+}
+
+p.discript-clone {
+    font-size: 14px;
+    color: rgba(153, 153, 153, 0.753);
+}
+
+p.discript-clone:hover {
+    color: rgba(153, 153, 153, 0.753);
+}

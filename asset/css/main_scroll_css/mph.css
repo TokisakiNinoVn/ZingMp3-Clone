@@ -92,7 +92,7 @@
 }
 
 .one_item--mph:hover {
-    background-color: rgb(61, 60, 59);
+    background-color: rgba(61, 60, 59, 0.521);
 }
 
 .one_item--mph:hover a ion-icon,
@@ -121,8 +121,15 @@ span.premium {
 
 .one_item--mph a img {
     width: 60px;
+    border-radius: 10px;
+}
+
+span.name_song {
+    font-size: 20px;
+    color: white;
 }
 
 p.singer-name, span.time-up{
     color: rgb(160, 157, 153);
+    font-size: 14px;
 }

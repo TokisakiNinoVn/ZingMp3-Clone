@@ -44,11 +44,6 @@ for (let i = 0; i < 11; i++) {
     container.innerHTML += htmlCode_;
 }
 
-const html_colab = `<img src="./asset/images/Ai_hori5.jpg" alt="">`;
-const colap = document.getElementById('all__item__colab');
-for (let i = 0; i < 17; i++) {
-    colap.innerHTML += html_colab;
-}
 
 
 const html_top100 = `
@@ -94,3 +89,55 @@ const radio_music = document.getElementById('radio_hot_item');
 for (let i = 0; i < 7; i++) {
     radio_music.innerHTML += radio_item;
 }
+
+
+const html_colab = `<img src="./asset/images/Ai_hori5.jpg" alt="">`;
+const colap = document.getElementById('all__item__colab');
+for (let i = 0; i < 17; i++) {
+    colap.innerHTML += html_colab;
+}
+
+// Clone _____________________________________________________
+
+const toppic_clone_1 = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_Idol2.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<a class="singer-name singer-name_clone" href="">Hoshino Ai</a>
+</div>
+`;
+const clone1 = document.getElementById('topic_clone-1');
+for (let i = 0; i < 5; i++) {
+    clone1.innerHTML += toppic_clone_1;
+}
+
+
+const toppic_clone_2 = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_neko.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<p class="discript-clone">Namae Wa Hoshino Ai! Change your time to love.</p> 
+</div>
+`;
+const clone2 = document.getElementById('topic_clone-2');
+for (let i = 0; i < 5; i++) {
+    clone2.innerHTML += toppic_clone_2;
+}
+
+
