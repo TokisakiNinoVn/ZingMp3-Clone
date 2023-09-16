@@ -1,0 +1,53 @@
+/* _____________________________ Banner ________________________ */
+.banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+
+    position: relative;
+}
+
+.banner .click_banner {
+    display: none;
+    position: absolute;
+    background-color: rgba(43, 44, 45, 0.663);
+    font-size: 38px;
+    color: rgb(176, 166, 166);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+    justify-content: center;
+    bottom: 40%;
+}
+.banner .click_banner:hover {
+    background-color: rgba(71, 72, 73, 0.729);
+}
+.banner .click-left {
+    left: 10px;
+}
+.banner .click-right {
+    right: 10px;
+}
+
+.banner_all-img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+div img.banner_img {
+    width: 368px;
+    border-radius: 8px;
+    transition: opacity 1s ease-in-out;
+}
+
+div img.banner_img:hover {
+    border: 1px double rgb(188, 7, 249);
+    box-shadow: rgba(159, 6, 247, 0.666) 0px 3px 8px;
+}
+
+.banner:hover .click_banner {
+    display: flex;
+}

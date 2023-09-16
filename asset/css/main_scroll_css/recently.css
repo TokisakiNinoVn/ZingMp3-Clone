@@ -1,0 +1,182 @@
+/* _____________________________ recently _____________________________________ */
+.recently {
+    margin-top: 40px;
+    padding: 10px;
+
+}
+
+.recently_tittle {
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recently_tittle span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.recently_tittle a {
+    display: flex;
+    align-items: center;
+}
+.recently_tittle a span{
+    font-weight: unset;
+    font-size: 15px;
+    color: rgba(240, 248, 255, 0.703);
+}
+/*_____________ Circle ___________________________________*/
+.recently_item {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.item_circle {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.in_img {
+    position: relative;
+}
+
+.div_boder {
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 72, 0);
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.div_boder img {
+    width: 143px;
+    z-index: 2;
+}
+
+.div_boder:hover img {
+    transition: all .8s ease;
+    transform: scale(1.1);
+    opacity: .6;
+}
+
+
+.in_img .img54 {
+    width: 52px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+    position: absolute;
+    bottom: 7px;
+    left: 70%;
+}
+
+.in_img ion-icon {
+    position: absolute;
+    left: 32%;
+    bottom: 32%;
+    font-size: 45px;
+    color: rgb(238, 223, 223);
+    display: none;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.in_img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
+
+}
+
+.div_boder:hover ion-icon {
+    display: flex;
+}
+
+.in_img span {
+    position: absolute;
+    bottom: -5px;
+    left: 37%;
+
+    background-color: red;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+
+}
+
+.decrip_item {
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+
+/*_____________ squar ________________________________*/
+.item_quare-mini {
+    max-width: 171px;
+    margin: 0 40px;
+}
+.div_img-mini {
+    width: 143px;
+}
+
+.div_img a img {
+    width: 143px;
+    opacity: .8;
+    z-index: 1;
+}
+
+.div_img:hover a img {
+    transition: all .8s ease;
+    opacity: .4;
+    transform: scale(1.1);
+}
+
+.div_icon--in--img {
+    position: absolute;
+    width: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.div_icon--in--img ion-icon {
+    font-size: 28px;
+    color: white;
+    display: none;
+    padding: 4px;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.div_icon--in--img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
+
+}
+
+.div_icon--in--img ion-icon:nth-child(2) {
+    font-size: 40px;
+}
+
+.div_img:hover .div_icon--in--img ion-icon {
+    display: flex;
+}
+
+.item_quare a {
+    width: 143px;
+}
+
+.item_quare a p:hover {
+    color: rgb(244, 10, 252);
+}
