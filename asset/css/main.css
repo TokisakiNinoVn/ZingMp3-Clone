@@ -16,14 +16,128 @@ body {
     margin-top: 70px;
 }
 
-/* #main::-webkit-scrollbar {
-    width: 0px;
-}
-#main_scroll::-webkit-scrollbar {
-    width: 0px;
-} */
 
-/* _____________________________ Chung ________________________ */
+/* _____________________________ 1 topic-item ________________________ */
+.topic-item {
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.topic-item .tittle {
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tittle span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tittle a {
+    display: flex;
+    align-items: center;
+}
+.tittle a span{
+    font-weight: unset;
+    font-size: 15px;
+    color: rgba(240, 248, 255, 0.703);
+}
+
+
+/* _____________________________ 1 item_circle ________________________ */
+.item_circle {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.div_contain-img {
+    position: relative;
+}
+
+.decrip_item {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.div-boder-img {
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 72, 0);
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* img */
+.div-boder-img img {
+    width: 143px;
+    z-index: 2;
+}
+.div-boder-img:hover img {
+    transition: all .6s ease;
+    transform: scale(1.1);
+    opacity: .6;
+}
+
+.div_contain-img ion-icon {
+    position: absolute;
+    left: 32%;
+    bottom: 32%;
+    font-size: 45px;
+    color: rgb(238, 223, 223);
+    display: none;
+    padding: 4px;
+    border-radius: 50%;
+}
+.div_contain-img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
+
+}
+
+.div-boder-img:hover ion-icon {
+    display: flex;
+}
+
+
+.div_contain-img .img-absolute {
+    width: 52px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+
+    position: absolute;
+    bottom: 7px;
+    left: 70%;
+}
+
+
+.div_contain-img span.live {
+    position: absolute;
+    bottom: -5px;
+    left: 37%;
+
+    background-color: red;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+
+}
+
+.decrip_item {
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+
+/* _____________________________ 1 item_square ________________________ */
 .item_quare {
     display: flex;
     flex-direction: column;
@@ -35,50 +149,77 @@ body {
     overflow: hidden;
 }
 
-.decrip_item {
-    margin-top: 18px;
-    margin-bottom: 18px;
+.item_quare-mini {
+    max-width: 171px;
+    margin: 0 40px;
 }
 
-
-
-/* _____________________________ new_release _____________________________________ */
-.new_release {
-    color: white;
+.div_img-mini {
+    width: 143px;
 }
 
-.all-item--new_release {
+.div_img a img {
+    width: 143px;
+    opacity: .8;
+    z-index: 1;
+}
+.div_img:hover a img {
+    transition: all .8s ease;
+    opacity: .4;
+    transform: scale(1.1);
+}
+
+.div_icon--in--img {
+    position: absolute;
+    width: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     display: flex;
-    justify-content: space-between;
-}
-
-.item_quare-big,
-.item_quare p {
-    max-width: 212px;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-.div_img-big,
-.new_release .div_icon--in--img,
-.new_release a img {
-    width: 212px;
+
+.div_icon--in--img ion-icon {
+    font-size: 28px;
+    color: white;
+    display: none;
+    padding: 4px;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.div_icon--in--img ion-icon:hover {
+    background-color: rgba(157, 155, 153, 0.43);
+
 }
 
-.item_quare p {
-    margin: 10px 0px 0;
+.div_icon--in--img ion-icon:nth-child(2) {
+    font-size: 40px;
 }
 
-.singer-name {
-    color: rgb(165, 160, 155);
-    font-size: 14px;
+.div_img:hover .div_icon--in--img ion-icon {
+    display: flex;
 }
 
-.new_release p:hover,
-.singer-name:hover {
-    color: blueviolet;
+.item_quare a {
+    width: 143px;
 }
 
-.singer-name:hover {
-    text-decoration: underline;
+.item_quare a p:hover {
+    color: rgb(244, 10, 252);
 }
+
+
+
+
+
+
+
+
+
 

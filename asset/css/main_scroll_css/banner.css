@@ -45,7 +45,9 @@ div img.banner_img {
 
 div img.banner_img:hover {
     border: 1px double rgb(188, 7, 249);
-    box-shadow: rgba(159, 6, 247, 0.666) 0px 3px 8px;
+    box-shadow: rgba(247, 6, 122, 0.666) 0px 3px 8px;
+    transform: scale(.98);
+    transition: .6s ease;
 }
 
 .banner:hover .click_banner {
