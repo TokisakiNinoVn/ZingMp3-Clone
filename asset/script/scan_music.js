@@ -49,3 +49,27 @@ const colap = document.getElementById('all__item__colab');
 for (let i = 0; i < 17; i++) {
     colap.innerHTML += html_colab;
 }
+
+
+
+
+
+const radio_item = `<div class="item_circle radio-one-item">
+<div class="in_img">
+    <a href="">
+        <div class="div_boder">
+            <img src="./asset/images/Ai_1x1.jpg" alt="">
+            <ion-icon name="play-circle-outline"></ion-icon>
+        </div>              
+    </a>
+    <img src="./asset/images/Avt.jpg" alt="" class="img54">
+    <span>Live</span>
+</div>
+<span class="decrip_item radio_album">Yasobi</span>
+<span class="decrip_item radio_listen-er">100k đang nghe</span>
+</div> ;`
+
+const radio_music = document.getElementById('all-radio-item');
+for (let i = 0; i < 6; i++) {
+    radio_music.innerHTML += radio_item;
+}

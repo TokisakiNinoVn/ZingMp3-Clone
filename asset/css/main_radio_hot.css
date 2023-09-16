@@ -1,0 +1,19 @@
+.radio_hot {
+    margin: 40px 0;
+}
+
+.radio-all-item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-one-item .radio_album {
+    margin: 18px auto;
+    margin-bottom: 5px;
+}
+
+.radio-one-item .radio_listen-er {
+    margin: 0 auto;
+    color: rgb(122, 122, 116);
+    font-size: 14px;
+}
