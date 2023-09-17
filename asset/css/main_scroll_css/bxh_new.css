@@ -1,38 +1,39 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ul.item-bxh {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid rgb(240, 13, 13);
-
     position: relative;
 }
 
 .item-bxh ion-icon {
-    display: none;
+    /* display: none; */
+    padding: 8px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 41%;
+    z-index: 3;
+}
+
+.item-bxh ion-icon:nth-child(1) {
+    left: -18px;
+}
+.item-bxh ion-icon:nth-child(2) {
+    right: -18px;
 }
 
 
 li.one-item-bxh_new {
     width: 372px;
     height: 150px;
-    padding: 10px;
-    border: 1px solid white;
-
+    padding: 10px 20px;
     align-items: center;
+    border-radius: 10px;
+    background-color: rgba(121, 122, 123, 0.178);
 }
 
 /* ___________ Left __________________________ */
@@ -48,6 +49,7 @@ li.one-item-bxh_new {
 
 .img-bxh-new {
     width: 120px;
+    z-index: 2;
 }
 
 .img-bxh-new:hover {
@@ -56,10 +58,19 @@ li.one-item-bxh_new {
 }
 
 .item-bxh .left ion-icon {
-    display: hidden;
+    display: none;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    background-color: unset;
+    color: white;
 }
-
+li.one-item-bxh_new:hover .left ion-icon {
+    display: flex;
+}
 
 /* ___________ Right __________________________ */
 .one-item-bxh_new .right {
@@ -71,14 +82,22 @@ li.one-item-bxh_new {
     justify-content: space-between;
 }
 
-span.name-song_bxh {
-    font-size: 20px;
-    font-family: 'Inter';
+.right .title-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.right .name-singer_bxh {
-    display: block;
+span.name-song_bxh {
+    font-size: 20px;
+}
+
+span.name-singer_bxh {
     color: rgba(240, 248, 255, 0.468);
+}
+span.name-singer_bxh:hover {
+    color: rgb(255, 0, 255);
+    text-decoration: underline;
 }
 
 .right div {
@@ -91,10 +110,16 @@ span.name-song_bxh {
 span.top_bxh {
     font-size: 40px;
     font-weight: bold;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(240, 248, 255, 0.468);
+    color: rgba(121, 122, 123, 0.178) !important;
 }
 
 
 div .release-date {
     margin-bottom: 5px;
+    color: rgba(240, 248, 255, 0.468);
+
 }
 

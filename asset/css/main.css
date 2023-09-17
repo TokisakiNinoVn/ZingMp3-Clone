@@ -9,7 +9,13 @@
 
 body {
     background-color: rgb(23, 15, 35);
+    font-family: 'Inter', sans-serif;
 }
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
 
 #main_scroll {
     width: 1170px;
