@@ -97,11 +97,12 @@ body::-webkit-scrollbar {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 45px;
+    font-size: 40px;
     color: rgb(238, 223, 223);
     display: none;
     padding: 4px;
     border-radius: 50%;
+    border: 1px solid white;
 }
 .div_contain-img ion-icon:hover {
     background-color: rgba(157, 155, 153, 0.43);
@@ -208,12 +209,15 @@ body::-webkit-scrollbar {
 
 }
 
+
 .div_img ion-icon:nth-child(2):hover {
     background-color: unset;
 }
 
 .div_icon--in--img ion-icon:nth-child(2) {
     font-size: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
 }
 
 .div_img:hover .div_icon--in--img ion-icon {

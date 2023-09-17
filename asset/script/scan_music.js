@@ -5,7 +5,7 @@ const html_wan_to_list = `
         <img src="./asset/images/Ai_1x1_sing.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -53,7 +53,7 @@ const html_top100 = `
         <img src="./asset/images/Ai_1x1_eye.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -75,7 +75,7 @@ const radio_item = `
         <a href="">
             <div class="div-boder-img">
                 <img src="./asset/images/Ai_1x1_idol.jpg" alt="">
-                <ion-icon name="play-circle-outline"></ion-icon>
+                <ion-icon name="play"></ion-icon>
             </div>              
         </a>
         <img src="./asset/images/Avt.jpg" alt="" class="img-absolute">
@@ -106,7 +106,7 @@ const toppic_clone_1 = `
         <img src="./asset/images/Ai_1x1_Idol2.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -127,7 +127,7 @@ const toppic_clone_2 = `
         <img src="./asset/images/Ai_1x1_neko.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -148,7 +148,7 @@ const toppic_clone_3 = `
         <img src="./asset/images/Ai_1x1_LewStars.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -170,7 +170,7 @@ const toppic_clone_4 = `
         <img src="./asset/images/Ai_1x1_nor.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -193,7 +193,7 @@ const toppic_clone_5 = `
         <img src="./asset/images/Ai_1x1_camera.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
@@ -213,7 +213,7 @@ const html_albumHot = `
         <img src="./asset/images/Ai_1x1_mommy.jpg" alt="">
         <div class="div_icon--in--img">
             <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="play"></ion-icon>
             <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
         </div>              
     </a>
