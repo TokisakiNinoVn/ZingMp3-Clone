@@ -24,7 +24,8 @@
 }
 
 .main_topic-item .item_circle:nth-child(2) a .div-boder-img{
-    /* border: unset; */
-    /* border: 5px solid rgb(245, 11, 11); */
-    border-top-right-radius: 5px solid rgb(245, 11, 11);
+    /* border: unset;
+    border-top: 5px solid rgb(245, 11, 11);
+    border-right: 5px solid rgb(245, 11, 11);
+    border-top: 5px solid rgb(245, 11, 11); */
 }

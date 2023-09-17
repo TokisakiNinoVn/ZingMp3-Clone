@@ -93,8 +93,10 @@ body::-webkit-scrollbar {
 
 .div_contain-img ion-icon {
     position: absolute;
-    left: 32%;
-    bottom: 32%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     font-size: 45px;
     color: rgb(238, 223, 223);
     display: none;
