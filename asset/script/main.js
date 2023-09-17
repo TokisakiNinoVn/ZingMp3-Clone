@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    alert('Trang không có responsive, đề cử kích thước màn hình 1530:995!');
+    alert('Trang không có responsive, đề cử kích thước màn hình 1530:995!\n Album: Hoshino Ai');
 });
 
 
@@ -43,4 +43,15 @@ clickLeftBtn.addEventListener("click", () => {
 clickRightBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % link_img.length;
     changeImage();
+});
+
+
+
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
+        e.preventDefault();
+    }
 });
