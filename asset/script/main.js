@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    alert('Trang không có responsive, đề cử kích thước màn hình 1530:995!\n Album: Hoshino Ai.\n Github: TokisakiNinoVn.');
+    alert('Trang không có responsive, đề cử kích thước màn hình [1530:995]');
+    alert('Album: Hoshino Ai.\n Github: TokisakiNinoVn.');
 });
 
 
