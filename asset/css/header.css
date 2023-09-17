@@ -1,11 +1,11 @@
 .header {
     width: 1288px;
     height: 70px;
-    background-color: rgb(23, 15, 35);
+    background-color: rgba(34, 11, 44, 0.934);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    opacity: .9;
+    opacity: .98;
 
     position: fixed;
     top: 0;

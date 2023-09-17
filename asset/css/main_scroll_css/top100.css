@@ -10,3 +10,19 @@
 .top100 .decrip_item {
     color: white;
 }
+
+
+/* _______________________________ ALbumhot ______________ */
+
+#all_item-albumHot {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.album-hot a img {
+    width: 212px;
+}
+p.album-hot_name {
+    color: white;
+}

@@ -141,3 +141,88 @@ for (let i = 0; i < 5; i++) {
 }
 
 
+const toppic_clone_3 = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_LewStars.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<p class="discript-clone">Music is indispensable, so are you.</p> 
+</div>
+`;
+const clone3 = document.getElementById('topic_clone-3');
+for (let i = 0; i < 5; i++) {
+    clone3.innerHTML += toppic_clone_3;
+}
+
+
+
+const toppic_clone_4 = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_nor.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<p class="discript-clone">You and the rest of the world, a perfect balance.</p> 
+</div>
+`;
+const clone4 = document.getElementById('topic_clone-4');
+for (let i = 0; i < 5; i++) {
+    clone4.innerHTML += toppic_clone_4;
+}
+
+
+
+
+const toppic_clone_5 = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_camera.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<p class="discript-clone">Monochrome, colorful or colorless. I'm probably colorless.</p> 
+</div>
+`;
+const clone5 = document.getElementById('topic_clone-5');
+for (let i = 0; i < 5; i++) {
+    clone5.innerHTML += toppic_clone_5;
+}
+
+const html_albumHot = `
+<div class="item_quare item_quare-big">
+<div class="div_img .div_img-big">
+    <a href="">
+        <img src="./asset/images/Ai_1x1_mommy.jpg" alt="">
+        <div class="div_icon--in--img">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="play-circle-outline"></ion-icon>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>              
+    </a>
+</div>
+<p class="decrip_item album-hot_name">Yaosobi</p>
+<a class="singer-name" href="">Hoshino Ai</a>
+</div>
+`;
+const albumHot = document.getElementById('all_item-albumHot');
+for (let i = 0; i < 5; i++) {
+    albumHot.innerHTML += html_albumHot;
+}
