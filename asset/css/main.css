@@ -105,7 +105,10 @@ body::-webkit-scrollbar {
 }
 .div_contain-img ion-icon:hover {
     background-color: rgba(157, 155, 153, 0.43);
+}
 
+.item_circle ion-icon:hover {
+    background-color: unset;
 }
 
 .div-boder-img:hover ion-icon {
@@ -199,9 +202,14 @@ body::-webkit-scrollbar {
     z-index: 1;
 
 }
+
 .div_icon--in--img ion-icon:hover {
     background-color: rgba(157, 155, 153, 0.43);
 
+}
+
+.div_img ion-icon:nth-child(2):hover {
+    background-color: unset;
 }
 
 .div_icon--in--img ion-icon:nth-child(2) {

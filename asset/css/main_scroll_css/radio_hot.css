@@ -23,9 +23,6 @@
     margin: auto;
 }
 
-.main_topic-item .item_circle:nth-child(2) a .div-boder-img{
-    /* border: unset;
-    border-top: 5px solid rgb(245, 11, 11);
-    border-right: 5px solid rgb(245, 11, 11);
-    border-top: 5px solid rgb(245, 11, 11); */
-}
+/* .radio_hot .div-boder-img ion-icon:hover {
+    background-color: unset;
+} */

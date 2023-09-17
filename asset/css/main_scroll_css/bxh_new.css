@@ -52,7 +52,7 @@ li.one-item-bxh_new {
     z-index: 2;
 }
 
-.img-bxh-new:hover {
+li.one-item-bxh_new:hover .img-bxh-new{
     transition: .6s ease;
     transform: scale(1.1);
 }

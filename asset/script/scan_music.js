@@ -71,18 +71,18 @@ for (let i = 0; i < 5; i++) {
 
 const radio_item = `
 <div class="item_circle">
-<div class="div_contain-img">
-    <a href="">
-        <div class="div-boder-img">
-            <img src="./asset/images/Ai_1x1_idol.jpg" alt="">
-            <ion-icon name="play-circle-outline"></ion-icon>
-        </div>              
-    </a>
-    <img src="./asset/images/Avt.jpg" alt="" class="img-absolute">
-    <span class="live" >Live</span>
-</div>
-<span class="decrip_item">Yasobi</span>
-<span class="view-er">1M đang nghe</span>
+    <div class="div_contain-img">
+        <a href="">
+            <div class="div-boder-img">
+                <img src="./asset/images/Ai_1x1_idol.jpg" alt="">
+                <ion-icon name="play-circle-outline"></ion-icon>
+            </div>              
+        </a>
+        <img src="./asset/images/Avt.jpg" alt="" class="img-absolute">
+        <span class="live" >Live</span>
+    </div>
+    <span class="decrip_item">Yasobi</span>
+    <span class="view-er">1M đang nghe</span>
 </div>`;
 
 const radio_music = document.getElementById('radio_hot_item');
