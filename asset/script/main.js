@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
-    alert('Trang không có responsive, đề cử tỉ lệ màn hình 1570:996!');
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     alert('Trang không có responsive, đề cử tỉ lệ màn hình 1570:996!');
+// });
 
 
 const link_img = [
