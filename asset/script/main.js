@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    alert('Trang không có responsive, đề cử kích thước màn hình 1530:995!\n Album: Hoshino Ai.\n Github: TokisakiNinoVn');
+    alert('Trang không có responsive, đề cử kích thước màn hình 1530:995!\n Album: Hoshino Ai.\n Github: TokisakiNinoVn.');
 });
 
 
@@ -47,11 +47,11 @@ clickRightBtn.addEventListener("click", () => {
 
 
 
-// document.addEventListener("contextmenu", function(e) {
-//     e.preventDefault();
-// });
-// document.addEventListener("keydown", function(e) {
-//     if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
-//         e.preventDefault();
-//     }
-// });
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
+        e.preventDefault();
+    }
+});
