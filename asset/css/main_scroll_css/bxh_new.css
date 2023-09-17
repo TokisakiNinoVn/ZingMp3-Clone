@@ -1,0 +1,100 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul.item-bxh {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(240, 13, 13);
+
+    position: relative;
+}
+
+.item-bxh ion-icon {
+    display: none;
+}
+
+
+li.one-item-bxh_new {
+    width: 372px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid white;
+
+    align-items: center;
+}
+
+/* ___________ Left __________________________ */
+
+.item-bxh .left {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.img-bxh-new {
+    width: 120px;
+}
+
+.img-bxh-new:hover {
+    transition: .6s ease;
+    transform: scale(1.1);
+}
+
+.item-bxh .left ion-icon {
+    display: hidden;
+
+}
+
+
+/* ___________ Right __________________________ */
+.one-item-bxh_new .right {
+    margin-left: 10px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+span.name-song_bxh {
+    font-size: 20px;
+    font-family: 'Inter';
+}
+
+.right .name-singer_bxh {
+    display: block;
+    color: rgba(240, 248, 255, 0.468);
+}
+
+.right div {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+span.top_bxh {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+div .release-date {
+    margin-bottom: 5px;
+}
+
