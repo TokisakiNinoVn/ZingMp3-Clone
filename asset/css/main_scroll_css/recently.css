@@ -5,4 +5,8 @@
     padding: 10px;
 }
 
+.item_quare-mini:nth-child(3) {
+    margin: 0;
+}
+
 
