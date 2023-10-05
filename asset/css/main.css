@@ -20,6 +20,10 @@ body::-webkit-scrollbar {
 #main_scroll {
     width: 1170px;
     margin-top: 70px;
+    display: none;
+}
+.hidden_display {
+    display: none;
 }
 
 
@@ -182,12 +186,11 @@ body::-webkit-scrollbar {
 
 .div_icon--in--img {
     position: absolute;
-    width: 100%;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -201,12 +204,10 @@ body::-webkit-scrollbar {
     padding: 4px;
     border-radius: 50%;
     z-index: 1;
-
 }
 
 .div_icon--in--img ion-icon:hover {
     background-color: rgba(157, 155, 153, 0.43);
-
 }
 
 
@@ -230,6 +231,12 @@ body::-webkit-scrollbar {
 
 .item_quare a p:hover {
     color: rgb(244, 10, 252);
+}
+
+
+#special_album {
+    cursor: pointer;
+    color: rgb(208, 212, 212);
 }
 
 

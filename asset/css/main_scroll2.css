@@ -1,0 +1,190 @@
+* {
+    transition: all 0.5s ease;
+}
+
+:root {
+    --color--text--gray: rgb(134, 132, 132);
+}
+
+#main_scroll--2 {
+    padding-top: 30px;
+    margin-top: 70px;
+
+    display: flex;
+}
+
+
+/* ________________________________ infor_media _________________*/
+.infor_media {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(234, 232, 232);
+}
+.infor_media .div_img {
+    --size: 300px;
+    width: var(--size);
+    height: var(--size);
+
+    overflow: hidden;
+    position: relative;
+}
+
+.div_img ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 50px;
+}
+
+.div_img ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 50px;
+}
+
+.div_img ion-icon:nth-child(3) {
+    display: none;
+}
+
+.infor_media img {
+    width: 100%;
+}
+
+.infor_media img:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.img_infor_effect {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.div_img ion-icon:nth-child(2) {
+    display: none;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid rgb(213, 213, 213);
+}
+
+.div_img:hover ion-icon:nth-child(2) {
+    display: block;
+    transition: all 0.5s ease;
+}
+
+#main_scroll--2 .tittle_media {
+    margin: 10px auto;
+}
+#main_scroll--2 .time_update,
+#main_scroll--2 .author_list,
+#main_scroll--2 .like {
+    font-size: 14px;
+    color: rgb(134, 132, 132);
+}
+
+.play_btn {
+    margin: 20px auto;
+    padding: 7px 24px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    background-color: rgb(175, 78, 223);
+    color: white;
+    border: unset;
+}
+
+.play_btn ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.play_btn span {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.level ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 7px;
+    border-radius: 50%;
+}
+.level ion-icon:hover {
+    background-color: rgba(255, 255, 255, 0.332);
+}
+
+/* ________________________________ infor_media _________________*/
+.list_music_item {
+    width: 840px;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+
+}
+
+.instruction_media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--color--text--gray);
+    padding: 10px 0;
+}
+
+.instruction_media span ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.instruction_media span {
+    font-size: 14px;
+    
+    display: flex;
+    align-items: center;
+
+}
+
+
+.media_1infor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.media_infor--left {
+    display: flex;
+    align-items: center;
+}
+
+.div_avt_song {
+    position: relative;
+    margin-left: 10px;
+}
+
+.div_avt_song ion-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.media_1infor img {
+    width: 40px;
+    border-radius: 5px;
+}
+.song_tittle {
+    margin-left: 10px;
+}
+.media_infor--left .singer_song {
+    display: block;
+    font-size: 14px;
+    color: var(--color--text--gray);
+}

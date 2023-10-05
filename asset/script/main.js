@@ -59,3 +59,34 @@ clickRightBtn.addEventListener("click", () => {
 //         e.preventDefault();
 //     }
 // });
+
+
+
+
+
+
+
+const specialAlbum = document.getElementById("special_album");
+const mainScrollEvent = document.getElementById("main_scroll");
+const mainScroll2Event = document.getElementById("main_scroll--2");
+
+specialAlbum.addEventListener("click", hidenMainScroll)
+
+function hidenMainScroll() {
+  mainScrollEvent.classList.add("hidden_display")
+  mainScroll2Event.classList.add("view_display")
+}
+
+
+
+
+// Main Scroll 2
+const eventIcon = document.querySelector('.icon_infor_media')
+const effectImg = document.querySelector('.img_infor')
+
+eventIcon.addEventListener('mouseenter', function() {
+    effectImg.classList.add('img_infor_effect')
+})
+eventIcon.addEventListener('mouseleave', function() {
+    effectImg.classList.remove('img_infor_effect')
+})

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./asset/css/navbar.css">
 
     <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/main_scroll2.css">
     <link rel="stylesheet" href="./asset/css/play_navbar.css">
 
     <!-- Main Scroll -->
@@ -323,9 +324,9 @@
                                 </div>              
                             </a>
                         </div>
-                        <a href="">
-                            <p class="decrip_item">Thiếu niên hoa hồng</p>
-                        </a>
+                        <!-- <a href=""> -->
+                            <p id="special_album" class="decrip_item">List Yêu Thích</p>
+                        <!-- </a> -->
                     </div>
                 </div>
             </div>
@@ -636,14 +637,123 @@
             </div>
         </div>
 
-        <div id="play_navbar">
+        <!-- ------------------------------------ Main Scroll 2 -------------------------------->
+        <div id="main_scroll--2">
+            <div class="infor_media">
+                <div class="div_img">
+                    <img class="img_infor" src="./asset/images/Ai_1x1_Bloom.jpg" alt="">
+                    <ion-icon class="icon_infor_media" name="play"></ion-icon>
+                    <ion-icon class="icon_infor_media" name="pause-outline"></ion-icon>
+                </div>
+                <h3 class="tittle_media">List Bạn Thường Nghe</h3>
+                <span class="time_update">Cập nhật: 10/01/2024</span>
+                <span class="author_list">Hoshino Ai</span>
+                <span class="like">1B Người yêu thích</span>
+                <button class="play_btn">
+                    <ion-icon name="play"></ion-icon>
+                    <span>phát tất cả</span>
+                </button>
+                <div class="level">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </div>
+            </div>
+            
+            <div class="list_music_item">
+                <div class="instruction_media">
+                    <span>
+                        <ion-icon name="barcode-outline"></ion-icon>
+                        bài hát
+                    </span>
+                    <span>Album</span>
+                    <span>thời gian</span>
+                </div>
+                <div class="media_1infor">
+                    <div class="media_infor--left">
+                        <ion-icon name="musical-notes-outline"></ion-icon>
 
+                        <div class="div_avt_song">
+                            <ion-icon name="play-outline"></ion-icon>
+                            <img src="./asset/images/Ai_1x1_Bloom.jpg" alt="">
+                        </div>
+                        <div class="song_tittle">
+                            <span class="name_song">Thiếu niên hoa hồng Remix</span>
+                            <span class="singer_song">Hoshino Ai</span>
+                        </div>
+                    </div>
+                    <div class="media_infor--mid">
+                        <span>Thiên đường đẹp nhất là nơi có người</span>
+                    </div>
+                    <div class="media_infor--right">
+                        <span class="total_time">10:20</span>
+                        <div class="items_for_media">
+                            <ion-icon name="mic-outline"></ion-icon>
+                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="play_navbar">
+            <div class="play_navbar--left">
+                <a class="play_navbar--link" href="">
+                    <img src="./asset/images/Ai_1x1_Bloom.jpg" alt="    ">
+                    <div class="text">
+                        <span class="name_song">Thiếu niên hoa hồng Remix</span>
+                        <span class="singer-name">Hoshino Ai</span>
+                    </div>
+                    
+                </a>
+                <div class="items-select">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="play_navbar--mid">
+                <div class="audio_control">
+                    <button><ion-icon name="shuffle-outline"></ion-icon></button>
+                    <button><ion-icon name="play-skip-back"></ion-icon></ion-icon></button>
+                    <button><ion-icon name="play-circle-outline"></ion-icon></button>
+                    <button><ion-icon name="play-skip-forward"></ion-icon></ion-icon></button>
+                    <button><ion-icon name="repeat-outline"></ion-icon></button>
+                </div>
+
+                <div class="audio-player">
+                    <div class="controls">
+                        <div class="time">
+                        <div class="current">0:00</div>
+                        <div class="timeline">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="length"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="play_navbar--right">
+                <div class="text"> <span>MV</span></div>
+               
+                <ion-icon name="mic-outline"></ion-icon>
+                <ion-icon name="open-outline"></ion-icon>
+
+                <ion-icon name="volume-medium-outline"></ion-icon>
+                <ion-icon name="volume-mute-outline"></ion-icon>
+                <div class="bulkhead">|</div>
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
         </div>
 
     </div>
 
     <script src="./asset/script/main.js"></script>
     <script src="./asset/script/scan_music.js"></script>
+    <script src="./asset/audio/audio.js"></script>
 
     <!-- icon font -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
