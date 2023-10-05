@@ -11,9 +11,9 @@
     align-items: center;
 
     position: fixed;
-    bottom: 50px;
+    bottom: 100px;
     right: 23px;
-    z-index: 999;
+    z-index: 99;
 
     opacity: 0;
     transform: translateY(100px);
