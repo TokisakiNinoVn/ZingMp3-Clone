@@ -20,7 +20,6 @@ body::-webkit-scrollbar {
 #main_scroll {
     width: 1170px;
     margin-top: 70px;
-    /* display: none; */
 }
 
 .hidden_display--main_scroll {
@@ -120,7 +119,6 @@ body::-webkit-scrollbar {
 .div-boder-img:hover ion-icon {
     display: flex;
 }
-
 
 .div_contain-img .img-absolute {
     width: 52px;

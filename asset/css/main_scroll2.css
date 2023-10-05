@@ -29,16 +29,17 @@
     align-items: center;
     color: rgb(234, 232, 232);
 }
-.infor_media .div_img {
+.infor_media .div_img--scroll2 {
     --size: 300px;
     width: var(--size);
     height: var(--size);
 
     overflow: hidden;
     position: relative;
+    border-radius: 10px;
 }
 
-.div_img ion-icon {
+.div_img--scroll2 ion-icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,16 +48,8 @@
     font-size: 50px;
 }
 
-.div_img ion-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    font-size: 50px;
-}
-
-.div_img ion-icon:nth-child(3) {
+.div_img--scroll2 ion-icon:nth-child(3) {
     display: none;
 }
 
@@ -76,14 +69,14 @@
     opacity: 0.5;
 }
 
-.div_img ion-icon:nth-child(2) {
+.div_img--scroll2 ion-icon:nth-child(2) {
     display: none;
     padding: 10px;
     border-radius: 50%;
     border: 1px solid rgb(213, 213, 213);
 }
 
-.div_img:hover ion-icon:nth-child(2) {
+.div_img--scroll2:hover ion-icon:nth-child(2) {
     display: block;
     transition: all 0.5s ease;
 }
@@ -91,6 +84,7 @@
 #main_scroll--2 .tittle_media {
     margin: 10px auto;
 }
+
 #main_scroll--2 .time_update,
 #main_scroll--2 .author_list,
 #main_scroll--2 .like {
@@ -137,8 +131,8 @@
 
 .close_btn span {
     position: absolute;
-    bottom: -40px;
-    left: -40px;
+    bottom: 13px;
+    right: -150px;
     width: max-content;
     padding: 5px 10px;
     border-radius: 10px;

@@ -83,10 +83,7 @@ backBtn.addEventListener("click", () => {
 })
 
 
-
-
-
-// Main Scroll 2
+// Main Scroll 2 event effects img
 const eventIcon = document.querySelector('.icon_infor_media')
 const effectImg = document.querySelector('.img_infor')
 
