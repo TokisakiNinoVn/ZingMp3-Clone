@@ -30,7 +30,7 @@ function changeImage() {
 changeImage();
 
 // Thiết lập hàm thay đổi ảnh sau mỗi 3 giây
-setInterval(changeImage, 3000);
+setInterval(changeImage, 5000);
 
 const clickLeftBtn = document.getElementById("click-left");
 const clickRightBtn = document.getElementById("click-right");

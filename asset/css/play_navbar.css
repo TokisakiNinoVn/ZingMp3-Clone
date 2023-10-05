@@ -103,11 +103,6 @@
     color: white;
     border: unset;
     font-size: 24px;
-
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; */
 }
 
 .audio_control button:nth-child(1),

@@ -1,12 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const navbarId = document.getElementById("play_navbar");
+    const playNavbar = document.getElementById("play_navbar");
     const closeBtnPlayNavbar = document.getElementById("close_play_navbar");
     const navbarLeft = document.querySelector('.navbar_scroll')
     const addPlaylist = document.querySelector('.navbar_add--playlist')
     
     closeBtnPlayNavbar.addEventListener("click", () => {
-      navbarId.style.display = 'none';
+      playNavbar.style.display = 'none';
       moveDowAddPlayList()
     });
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openBtnPlayNavbar = document.querySelectorAll(".play_music");
     openBtnPlayNavbar.forEach((btn) => {
       btn.addEventListener("click", () => {
-        navbarId.style.display = 'flex';
+        playNavbar.style.display = 'flex';
         moveUpAddPlayList()
       });
     });
@@ -28,13 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
         addPlaylist.style.bottom = 'unset'
     }
 
-    if(navbarId.style.display = 'flex' || (navbarId.style.display = 'block')) {
+    if(playNavbar.style.display = 'flex' || (playNavbar.style.display = 'block')) {
         moveUpAddPlayList()
     } else {
         moveDowAddPlayList()
     }
 
-  });
+    window.addEventListener("load", function() {
+        playNavbar.style.display = 'none';
+        moveDowAddPlayList()
+    });
+
+});
+
+
 
 
   
