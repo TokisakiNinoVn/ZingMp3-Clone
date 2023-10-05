@@ -11,6 +11,13 @@
     margin-top: 70px;
 
     display: flex;
+    overflow: hidden;
+    display: none;
+
+}
+
+.hidden_display--main_scroll2 {
+    display: flex;
 }
 
 
@@ -119,13 +126,51 @@
     padding: 7px;
     border-radius: 50%;
 }
+
 .level ion-icon:hover {
     background-color: rgba(255, 255, 255, 0.332);
 }
 
+.close_btn {
+    position: relative;
+}
+
+.close_btn span {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    display: none;
+    opacity: 0;
+    transform: translateY(-80px);
+}
+
+.close_btn:hover span {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#close_main_scroll2 {
+    font-size: 30px;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--color--text--gray);
+    margin-top: 20px;
+}
+#close_main_scroll2:hover {
+    background-color: blueviolet;
+    transform: rotate(360deg) scale(1.1);
+}
+
+
 /* ________________________________ infor_media _________________*/
 .list_music_item {
     width: 840px;
+    height: 1000px;
     color: rgb(255, 255, 255);
     margin-left: 20px;
 
@@ -137,7 +182,7 @@
     align-items: center;
     text-transform: uppercase;
     color: var(--color--text--gray);
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .instruction_media span ion-icon {
@@ -150,18 +195,26 @@
     
     display: flex;
     align-items: center;
-
 }
-
 
 .media_1infor {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+.media_1infor:hover {
+    background-color: rgba(251, 251, 251, 0.179);
+    transition: 0.2s ease;
 }
 
 .media_infor--left {
     display: flex;
     align-items: center;
+    min-width: 282px;
+
 }
 
 .div_avt_song {
@@ -169,22 +222,74 @@
     margin-left: 10px;
 }
 
-.div_avt_song ion-icon{
+.div_avt_song ion-icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
+}
+
+.media_1infor:hover .play_media--effects {
+    display: block;
 }
 
 .media_1infor img {
     width: 40px;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+.media_1infor:hover img {
+    opacity: .6;
+    transition: 0.3s ease;
+}
+
 .song_tittle {
     margin-left: 10px;
 }
+
+.song_tittle .name_song {
+    font-size: 16px;
+}
+
 .media_infor--left .singer_song {
     display: block;
     font-size: 14px;
     color: var(--color--text--gray);
+}
+
+
+.media_infor--mid span,
+.media_infor--right span {
+    font-size: 14px;
+    color: var(--color--text--gray);
+}
+
+.media_infor--right {
+    width: 230px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+}
+
+.media_1infor:hover .total_time,
+.media_infor--right .items_for_media {
+    display: none;
+}
+
+
+.items_for_media ion-icon{
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.items_for_media ion-icon:hover {
+    background-color: var(--color--text--gray);
+}
+
+.media_1infor:hover .items_for_media {
+    display: block;
 }

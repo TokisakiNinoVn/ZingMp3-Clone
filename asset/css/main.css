@@ -20,9 +20,10 @@ body::-webkit-scrollbar {
 #main_scroll {
     width: 1170px;
     margin-top: 70px;
-    display: none;
+    /* display: none; */
 }
-.hidden_display {
+
+.hidden_display--main_scroll {
     display: none;
 }
 

@@ -65,17 +65,23 @@ clickRightBtn.addEventListener("click", () => {
 
 
 
-
+// Main Scroll 1 hidden Event
 const specialAlbum = document.getElementById("special_album");
 const mainScrollEvent = document.getElementById("main_scroll");
 const mainScroll2Event = document.getElementById("main_scroll--2");
 
-specialAlbum.addEventListener("click", hidenMainScroll)
+specialAlbum.addEventListener("click", () => {
+  mainScrollEvent.classList.add("hidden_display--main_scroll")
+  mainScroll2Event.style.display = 'flex'
+})
 
-function hidenMainScroll() {
-  mainScrollEvent.classList.add("hidden_display")
-  mainScroll2Event.classList.add("view_display")
-}
+// Main Scroll 2 hidden Event
+const backBtn = document.getElementById("close_main_scroll2")
+backBtn.addEventListener("click", () => {
+  mainScrollEvent.classList.remove("hidden_display--main_scroll")
+  mainScroll2Event.style.display = 'none'
+})
+
 
 
 
@@ -90,3 +96,5 @@ eventIcon.addEventListener('mouseenter', function() {
 eventIcon.addEventListener('mouseleave', function() {
     effectImg.classList.remove('img_infor_effect')
 })
+
+
