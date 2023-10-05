@@ -1,5 +1,5 @@
 * {
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
 }
 
 :root {
@@ -251,6 +251,11 @@
     display: block;
     font-size: 14px;
     color: var(--color--text--gray);
+}
+.media_infor--left .singer_song:hover {
+    cursor: pointer;
+    color: violet;
+    text-decoration: underline;
 }
 
 

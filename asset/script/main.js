@@ -50,7 +50,7 @@ clickRightBtn.addEventListener("click", () => {
 });
 
 
-
+////Ban F12
 // document.addEventListener("contextmenu", function(e) {
 //     e.preventDefault();
 // });
@@ -93,5 +93,7 @@ eventIcon.addEventListener('mouseenter', function() {
 eventIcon.addEventListener('mouseleave', function() {
     effectImg.classList.remove('img_infor_effect')
 })
+
+
 
 

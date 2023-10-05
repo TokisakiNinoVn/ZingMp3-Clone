@@ -1,6 +1,7 @@
 a {
     color: rgb(208, 212, 212);
 }
+
 li {
     display: flex;
     align-items: center;
@@ -15,6 +16,7 @@ li {
     left: 0;
     top: 0;
     z-index: 0;
+    font-size: 14px;
 }
 /* ________________________[ logo ]_______________________________________________________ */
 .zing_logo {
@@ -28,9 +30,11 @@ li {
     border-radius: 50%;
     border: 2px double rgb(255, 0, 255);
 }
+
 .link_home a {
 
 }
+
 .logo_text {
     margin-left: 10px;
 }
