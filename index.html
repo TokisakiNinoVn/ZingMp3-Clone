@@ -747,10 +747,17 @@
                 </div>
             </div>
             <div class="play_navbar--mid">
+
                 <div class="audio_control">
                     <button><ion-icon name="shuffle-outline"></ion-icon></button>
                     <button><ion-icon name="play-skip-back"></ion-icon></ion-icon></button>
-                    <button><ion-icon name="play-circle-outline"></ion-icon></button>
+                    
+                    <button id="stop_pause_music">
+                        <ion-icon class="music_status--pause" name="play-circle-outline"></ion-icon>
+                        <ion-icon class="music_status--play" name="pause-circle-outline"></ion-icon>
+                    </button>
+
+
                     <button><ion-icon name="play-skip-forward"></ion-icon></ion-icon></button>
                     <button><ion-icon name="repeat-outline"></ion-icon></button>
                 </div>
@@ -758,13 +765,12 @@
                 <div class="audio-player">
                     <div class="controls">
                         <div class="time">
-                        <div class="current">0:00</div>
-                        <div class="timeline">
-                            <div class="progress"></div>
+                            <div class="current">0:00</div>
+                            <div class="timeline">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="length"></div>
                         </div>
-                        <div class="length"></div>
-                        </div>
-                        
                     </div>
                     
                 </div>

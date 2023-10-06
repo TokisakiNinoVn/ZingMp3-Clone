@@ -17,16 +17,10 @@
     justify-content: space-around;
     align-items: center;
 
-    display: none;
+    display: flex;
 }
 
-/* #play_navbar.active {
-    display: block;
-} */
-
-
 /* __________________ chung ___________________________________*/
-
 .play_navbar--left,
 .play_navbar--right {
     width: 446px;
@@ -93,6 +87,8 @@
     width: 595px;
 }
 
+
+
 .audio_control {
     display: flex;
     align-items: center;
@@ -139,7 +135,6 @@
     background-color: var(--usetVar);
     padding: 0;
 }
-
 
 
 .audio-player {
