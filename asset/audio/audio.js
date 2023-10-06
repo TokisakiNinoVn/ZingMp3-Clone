@@ -1,3 +1,10 @@
+
+const linkAudio = [
+  "./FoolForYouKastraLyricsVietsub.mp3",
+  "./asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3",
+  "./asset/audio/VoCamGiangThan.mp3"
+]
+
 const audioPlayer = document.querySelector(".audio-player");
 const audio = new Audio(
   "./FoolForYouKastraLyricsVietsub.mp3"
