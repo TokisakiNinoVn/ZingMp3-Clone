@@ -1,19 +1,18 @@
 
 const linkAudio = [
   "./FoolForYouKastraLyricsVietsub.mp3",
-  "./asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3",
-  "./asset/audio/VoCamGiangThan.mp3"
+  "./Thieu_Nien_Hoa_Hong_Remix.mp3",
+  "./VoCamGiangThan.mp3",
 ]
 
-const audioPlayer = document.querySelector(".audio-player");
-const audio = new Audio(
-  "./FoolForYouKastraLyricsVietsub.mp3"
-);
-console.dir(audio);
+const audioPlayer = document.getElementById("music_item--1");
+// const audio1 = new Audio(linkAudio[3]);
+const audio = new Audio("./Thieu_Nien_Hoa_Hong_Remix.mp3");
 
+console.dir(audio);
 audio.addEventListener("loadeddata", () => {
     audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(audio.duration)
-    audio.volume = .75},false
+    audio.volume = .100}, false
 );
 
 //click on timeline to skip around
