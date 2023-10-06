@@ -1,88 +1,53 @@
+const playButton = document.getElementById('stop_pause_music');
+const playButtonMainScroll2 = document.getElementById('music_item--1');
+const pauseIcon = document.querySelector('.music_status--pause');
+const playIcon = document.querySelector('.music_status--play');
+const progressBar = document.querySelector('.progress');
+const currentTime = document.querySelector('.current');
 
-const linkAudio = [
-  "./FoolForYouKastraLyricsVietsub.mp3",
-  "./Thieu_Nien_Hoa_Hong_Remix.mp3",
-  "./VoCamGiangThan.mp3",
-]
+const audio = new Audio('Thieu_Nien_Hoa_Hong_Remix.mp3'); // Thay 'url_of_your_audio_file.mp3' bằng đường dẫn của tệp âm thanh của bạn
 
-const audioPlayer = document.getElementById("music_item--1");
-// const audio1 = new Audio(linkAudio[3]);
-const audio = new Audio("./Thieu_Nien_Hoa_Hong_Remix.mp3");
+// Khởi tạo trạng thái ban đầu
+let isPlaying = false;
 
-console.dir(audio);
-audio.addEventListener("loadeddata", () => {
-    audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(audio.duration)
-    audio.volume = .100}, false
-);
-
-//click on timeline to skip around
-const timeline = audioPlayer.querySelector(".timeline");
-timeline.addEventListener("click", e => {
-  const timelineWidth = window.getComputedStyle(timeline).width;
-  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
-  audio.currentTime = timeToSeek;
-}, false);
-
-//click volume slider to change volume
-const volumeSlider = audioPlayer.querySelector(".controls .volume-slider");
-volumeSlider.addEventListener('click', e => {
-  const sliderWidth = window.getComputedStyle(volumeSlider).width;
-  const newVolume = e.offsetX / parseInt(sliderWidth);
-  audio.volume = newVolume;
-  audioPlayer.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
-}, false)
-
-
-//check audio percentage and update time accordingly
-setInterval(() => {
-  const progressBar = audioPlayer.querySelector(".progress");
-  progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
-  audioPlayer.querySelector(".time .current").textContent = getTimeCodeFromNum(
-    audio.currentTime
-  );
-}, 500);
-
-
-
-//toggle between playing and pausing on button click
-const playBtn = audioPlayer.querySelector(".controls .toggle-play");
-playBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      playBtn.classList.remove("play");
-      playBtn.classList.add("pause");
-      audio.play();
-    } else {
-      playBtn.classList.remove("pause");
-      playBtn.classList.add("play");
-      audio.pause();
-    }
-  },
-  false
-);
-
-
-audioPlayer.querySelector(".volume-button").addEventListener("click", () => {
-  const volumeEl = audioPlayer.querySelector(".volume-container .volume");
-  audio.muted = !audio.muted;
-  if (audio.muted) {
-    volumeEl.classList.remove("icono-volumeMedium");
-    volumeEl.classList.add("icono-volumeMute");
+// Sự kiện click vào nút play/pause
+// playButton.addEventListener('click', () => {
+playButtonMainScroll2.addEventListener('click', () => {
+  if (isPlaying) {
+    audio.pause();
   } else {
-    volumeEl.classList.add("icono-volumeMedium");
-    volumeEl.classList.remove("icono-volumeMute");
+    audio.play();
   }
+  isPlaying = !isPlaying;
 });
 
+// Sự kiện thay đổi thanh tiến trình khi audio chạy
+audio.addEventListener('timeupdate', () => {
+  const duration = audio.duration;
+  const currentTimeValue = audio.currentTime;
 
+  const progress = (currentTimeValue / duration) * 100;
+  progressBar.style.width = progress + '%';
 
-//turn 128 seconds into 2:08
-function getTimeCodeFromNum(num) {
-  let seconds = parseInt(num);
-  let minutes = parseInt(seconds / 60);
-  seconds -= minutes * 60;
-  const hours = parseInt(minutes / 60);
-  minutes -= hours * 60;
+  // Định dạng thời gian hiện tại
+  const minutes = Math.floor(currentTimeValue / 60);
+  const seconds = Math.floor(currentTimeValue % 60);
+  currentTime.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+});
 
-  if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-  return `${String(hours).padStart(2, 0)}:${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-}
+// Sự kiện khi audio kết thúc
+audio.addEventListener('ended', () => {
+  isPlaying = false;
+  pauseIcon.style.display = 'none';
+  playIcon.style.display = 'inline';
+  progressBar.style.width = '0%';
+  currentTime.textContent = '0:00';
+});
+
+// Cập nhật độ dài của bản nhạc khi nó đã tải hoàn toàn
+audio.addEventListener('canplaythrough', () => {
+  const duration = audio.duration;
+  const minutes = Math.floor(duration / 60);
+  const seconds = Math.floor(duration % 60);
+  document.querySelector('.length').textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+});

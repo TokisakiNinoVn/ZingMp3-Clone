@@ -1,0 +1,84 @@
+
+const linkaudio1 = [
+  "./FoolForYouKastraLyricsVietsub.mp3",
+  "./Thieu_Nien_Hoa_Hong_Remix.mp3",
+  "./VoCamGiangThan.mp3",
+]
+
+const audio1Player = document.getElementById("music_item--1");
+const audio1 = new audio1("./Thieu_Nien_Hoa_Hong_Remix.mp3");
+
+console.dir(audio1);
+audio1.addEventListener("loadeddata", () => {
+  audio1Player.querySelector(".time .length").textContent = getTimeCodeFromNum(audio1.duration)
+  audio1.volume = .100}, false
+)
+
+//toggle between playing and pausing on button click
+const playBtn = document.getElementById("stop_pause_music")
+playBtn.addEventListener("click", () => {
+    if (audio1.paused) {
+      audio1.play();
+    } else {
+      audio1.pause();
+    }
+  },
+  false
+);
+
+//click on timeline to skip around
+const timeline = audio1Player.querySelector(".timeline");
+timeline.addEventListener("click", e => {
+  const timelineWidth = window.getComputedStyle(timeline).width;
+  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio1.duration;
+  audio1.currentTime = timeToSeek;
+}, false);
+
+//click volume slider to change volume
+const volumeSlider = audio1Player.querySelector(".controls .volume-slider");
+volumeSlider.addEventListener('click', e => {
+  const sliderWidth = window.getComputedStyle(volumeSlider).width;
+  const newVolume = e.offsetX / parseInt(sliderWidth);
+  audio1.volume = newVolume;
+  audio1Player.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
+}, false)
+
+
+//check audio1 percentage and update time accordingly
+setInterval(() => {
+  const progressBar = audio1Player.querySelector(".progress");
+  progressBar.style.width = audio1.currentTime / audio1.duration * 100 + "%";
+  audio1Player.querySelector(".time .current").textContent = getTimeCodeFromNum(
+    audio1.currentTime
+  );
+}, 500);
+
+
+
+
+
+audio1Player.querySelector(".volume-button").addEventListener("click", () => {
+  const volumeEl = audio1Player.querySelector(".volume-container .volume");
+  audio1.muted = !audio1.muted;
+  if (audio1.muted) {
+    volumeEl.classList.remove("icono-volumeMedium");
+    volumeEl.classList.add("icono-volumeMute");
+  } else {
+    volumeEl.classList.add("icono-volumeMedium");
+    volumeEl.classList.remove("icono-volumeMute");
+  }
+});
+
+
+
+//turn 128 seconds into 2:08
+function getTimeCodeFromNum(num) {
+  let seconds = parseInt(num);
+  let minutes = parseInt(seconds / 60);
+  seconds -= minutes * 60;
+  const hours = parseInt(minutes / 60);
+  minutes -= hours * 60;
+
+  if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+  return `${String(hours).padStart(2, 0)}:${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+}

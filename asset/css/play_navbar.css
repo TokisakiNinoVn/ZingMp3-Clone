@@ -87,8 +87,6 @@
     width: 595px;
 }
 
-
-
 .audio_control {
     display: flex;
     align-items: center;
@@ -129,6 +127,7 @@
     background-color: rgba(252, 252, 252, 0.137);
 }
 
+
 #musicPlayer {
     width: 100%;
     --usetVar: unset;
@@ -144,49 +143,49 @@
     align-items: center;
     justify-content: center;
     font-size: 13px;
-  }
+}
   
-  .audio-player .timeline {
+.audio-player .timeline {
     background: rgba(255, 255, 255, 0.511);
     width: 485px;
     position: relative;
-    cursor: pointer;
+    cursor: text;
     box-shadow: 0 2px 10px 0 #0008;
     margin: auto 10px;
     border-radius: 3px;
-  }
+}
   
-  .audio-player .timeline .progress {
+.audio-player .timeline .progress {
     background: coral;
     width: 0%;
     height: 100%;
     transition: 0.2s;
-  }
+}
   
-  .audio-player .controls {
+.audio-player .controls {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     padding: 0 20px;
-  }
+}
   
-  .audio-player .controls > * {
+.audio-player .controls > * {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .audio-player .controls .time {
+.audio-player .controls .time {
     display: flex;
-  }
+}
 
-  .audio-player .controls .time > * {
+.audio-player .controls .time > * {
     padding: 2px;
-  }
+}
 
-  .audio_control button:nth-child(3) {
+.audio_control button:nth-child(3) {
     transition: unset;
-  }
+}
 
 /* __________________ Right ___________________________________*/
 .play_navbar--right {
