@@ -4,6 +4,27 @@ window.addEventListener("load", function() {
     moveDowAddPlayList()
 });
 
+const btnHiddenPlayNavbar = document.getElementById("hidden_play_navbar")
+const iconHidden = document.querySelector(".navbar_status--hidden")
+const iconShow = document.querySelector(".navbar_status--show")
+const scrollToTopEvent = document.querySelector(".scrollToTopBtn")
+
+btnHiddenPlayNavbar.addEventListener("click", function() {
+    if (playNavbar.classList.contains("movedown")) {
+        playNavbar.classList.remove('movedown');
+        scrollToTopBtn.classList.remove('nonePlayNavbar');
+        iconShow.style.display = "none";
+        iconHidden.style.display = "block";
+        moveUpAddPlayList()
+    } else {
+        playNavbar.classList.add('movedown');
+        scrollToTopBtn.classList.add('nonePlayNavbar');
+        iconHidden.style.display = "none";
+        iconShow.style.display = "block";
+        moveDowAddPlayList()
+    }
+})
+
 
 const playNavbar = document.getElementById("play_navbar");
 const closeBtnPlayNavbar = document.getElementById("close_play_navbar");
@@ -72,19 +93,25 @@ function pauseMusicItems(audioVar) {
 }
 
 
+// let audio = null;
+// function createOrUpdateAudio(audioFile) {
+//   audio.pause();
+//   audio = new Audio(audioFile);
+//   return audio
+// }
 
 // Function event _____________________________________________________________
-
-// let audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
-// let audio = null;
 document.getElementById("music_item--1").addEventListener("click", function() {
-    let audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
+    let audio = null
+    audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
+    // createOrUpdateAudio(audio);
     
     // Click button play music => show play navbar
     playNavbar.style.display = 'flex';
     moveUpAddPlayList()
     playMusic_IconEvent()
     playMusicItems(audio)
+    scrollToTopBtn.classList.remove('nonePlayNavbar');
 
 
     let audioPlayer = document.querySelector(".audio-player");
@@ -158,6 +185,8 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         playNavbar.style.display = 'none';
         moveDowAddPlayList()
         pauseMusicItems(audio)
+        scrollToTopBtn.classList.add('nonePlayNavbar');
+        audio = null
     });
 
     // Move "add playlist" when play navbar is show/hiden
@@ -181,13 +210,15 @@ document.getElementById("music_item--1").addEventListener("click", function() {
 });
 
 document.getElementById("music_item--2").addEventListener("click", function() {
-    let audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
+    let audio = null
+    audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
     
     // Click button play music => show play navbar
     playNavbar.style.display = 'flex';
     moveUpAddPlayList()
     playMusic_IconEvent()
     playMusicItems(audio)
+    scrollToTopBtn.classList.remove('nonePlayNavbar');
 
 
     let audioPlayer = document.querySelector(".audio-player");
@@ -261,6 +292,8 @@ document.getElementById("music_item--2").addEventListener("click", function() {
         playNavbar.style.display = 'none';
         moveDowAddPlayList()
         pauseMusicItems(audio)
+        scrollToTopBtn.classList.add('nonePlayNavbar')
+        audio = null
     });
 
     // Move "add playlist" when play navbar is show/hiden
@@ -283,13 +316,15 @@ document.getElementById("music_item--2").addEventListener("click", function() {
 });
 
 document.getElementById("music_item--3").addEventListener("click", function() {
-    let audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
+    let audio = null
+    audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
     
     // Click button play music => show play navbar
     playNavbar.style.display = 'flex';
     moveUpAddPlayList()
     playMusic_IconEvent()
     playMusicItems(audio)
+    scrollToTopBtn.classList.remove('nonePlayNavbar');
 
 
     let audioPlayer = document.querySelector(".audio-player");
@@ -363,6 +398,8 @@ document.getElementById("music_item--3").addEventListener("click", function() {
         playNavbar.style.display = 'none';
         moveDowAddPlayList()
         pauseMusicItems(audio)
+        scrollToTopBtn.classList.add('nonePlayNavbar');
+        audio = null
     });
 
     // Move "add playlist" when play navbar is show/hiden
@@ -384,23 +421,3 @@ document.getElementById("music_item--3").addEventListener("click", function() {
     })
 });
 
-
-
-const btnHiddenPlayNavbar = document.getElementById("hidden_play_navbar")
-const iconHidden = document.querySelector(".navbar_status--hidden")
-const iconShow = document.querySelector(".navbar_status--show")
-
-btnHiddenPlayNavbar.addEventListener("click", function() {
-    if (playNavbar.classList.contains("movedown")) {
-        playNavbar.classList.remove('movedown');
-        iconShow.style.display = "none";
-        iconHidden.style.display = "block";
-        moveUpAddPlayList()
-
-    } else {
-        playNavbar.classList.add('movedown');
-        iconHidden.style.display = "none";
-        iconShow.style.display = "block";
-        moveDowAddPlayList()
-    }
-})

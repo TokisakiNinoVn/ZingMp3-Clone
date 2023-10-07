@@ -29,3 +29,8 @@
     opacity: 1;
     transform: translateY(0)
 }
+
+.nonePlayNavbar {
+    bottom: 30px;
+    opacity: 1;
+}

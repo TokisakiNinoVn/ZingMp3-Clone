@@ -312,10 +312,7 @@
     --boder: 5px;
     border-top-left-radius: var(--boder);
     border-top-right-radius: var(--boder);
-}
-
-#hidden_play_navbar ion-icon{
-    margin: auto;
+    cursor: pointer;
 }
 
 .navbar_status--show {
