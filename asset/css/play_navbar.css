@@ -260,21 +260,50 @@
     cursor: not-allowed;
 }
 
-
 .play_navbar--right ion-icon:nth-child(5) {
-    display: none;
+    display: block;
 }
 
-/* .play_navbar--right > * {
+
+.play_navbar--right span:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.play_navbar--right {
     padding: 5px;
     border-radius: 50%;
 }
 
-.play_navbar--right > *:hover {
+.play_navbar--right ion-icon {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.play_navbar--right ion-icon:hover {
     background-color: rgba(255, 255, 255, 0.2);
-} */
+
+}
+
+#close_play_navbar, .btn_volume_icon ion-icon{
+    cursor: pointer;
+}
 
 
 
+/* _____________________________________________ Button hidden/view playnavbar ___________________________________*/
 
+#hidden_play_navbar {
+    position: absolute;
+    top: -26px;
+
+    background-color: aqua;
+    width: 70px;
+    height: 26px;
+    font-size: 30px;
+}
+
+#hidden_play_navbar ion-icon{
+    margin: auto;
+}
 

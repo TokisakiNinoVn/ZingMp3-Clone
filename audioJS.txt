@@ -1,84 +1,81 @@
+// let audio;
+    // document.getElementById("music_item--1").addEventListener("click", function() {
+    //     if (audio == null) {
+    //         audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
+    //     }
+    // });
+    
+    // document.getElementById("music_item--2").addEventListener("click", function() {
+    //     audio = new Audio("../asset/audio/VoCamGiangThan.mp3");       
 
-const linkaudio1 = [
-  "./FoolForYouKastraLyricsVietsub.mp3",
-  "./Thieu_Nien_Hoa_Hong_Remix.mp3",
-  "./VoCamGiangThan.mp3",
-]
+    // });
+    
+    // document.getElementById("music_item--3").addEventListener("click", function() {
+    //     audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");        
+    
+    // });
 
-const audio1Player = document.getElementById("music_item--1");
-const audio1 = new audio1("./Thieu_Nien_Hoa_Hong_Remix.mp3");
+    // let audio = "../asset/audio/VoCamGiangThan.mp3";
+    // function createOrUpdateAudio(audioFile) {
+    //     if (audio == audioFile) {
+    //         audio.play();
+    //     } else {
+    //         // Nếu audio đã tồn tại, dừng nó trước khi cập nhật đối tượng audio
+    //         audio.pause();
+    //         audio = new Audio(audioFile);
+    //         audio.play();
+    //     }
+    // }
 
-console.dir(audio1);
-audio1.addEventListener("loadeddata", () => {
-  audio1Player.querySelector(".time .length").textContent = getTimeCodeFromNum(audio1.duration)
-  audio1.volume = .100}, false
-)
+    // // Sử dụng event listener cho các phần tử có id tương ứng
+    // document.getElementById("music_item--1").addEventListener("click", function() {
+    //     createOrUpdateAudio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
+    // });
 
-//toggle between playing and pausing on button click
-const playBtn = document.getElementById("stop_pause_music")
-playBtn.addEventListener("click", () => {
-    if (audio1.paused) {
-      audio1.play();
-    } else {
-      audio1.pause();
-    }
-  },
-  false
-);
+    // document.getElementById("music_item--2").addEventListener("click", function() {
+    //     createOrUpdateAudio("../asset/audio/VoCamGiangThan.mp3");
+    // });
 
-//click on timeline to skip around
-const timeline = audio1Player.querySelector(".timeline");
-timeline.addEventListener("click", e => {
-  const timelineWidth = window.getComputedStyle(timeline).width;
-  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio1.duration;
-  audio1.currentTime = timeToSeek;
-}, false);
-
-//click volume slider to change volume
-const volumeSlider = audio1Player.querySelector(".controls .volume-slider");
-volumeSlider.addEventListener('click', e => {
-  const sliderWidth = window.getComputedStyle(volumeSlider).width;
-  const newVolume = e.offsetX / parseInt(sliderWidth);
-  audio1.volume = newVolume;
-  audio1Player.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
-}, false)
-
-
-//check audio1 percentage and update time accordingly
-setInterval(() => {
-  const progressBar = audio1Player.querySelector(".progress");
-  progressBar.style.width = audio1.currentTime / audio1.duration * 100 + "%";
-  audio1Player.querySelector(".time .current").textContent = getTimeCodeFromNum(
-    audio1.currentTime
-  );
-}, 500);
+    // document.getElementById("music_item--3").addEventListener("click", function() {
+    //     createOrUpdateAudio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
+    // });
 
 
 
 
 
-audio1Player.querySelector(".volume-button").addEventListener("click", () => {
-  const volumeEl = audio1Player.querySelector(".volume-container .volume");
-  audio1.muted = !audio1.muted;
-  if (audio1.muted) {
-    volumeEl.classList.remove("icono-volumeMedium");
-    volumeEl.classList.add("icono-volumeMute");
-  } else {
-    volumeEl.classList.add("icono-volumeMedium");
-    volumeEl.classList.remove("icono-volumeMute");
-  }
-});
 
 
+    // document.getElementById("music_item--1").addEventListener("click", function() {
+    //     audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
+    //     playNavbar.style.display = 'flex';
+    //     moveUpAddPlayList()
+    //     playMusic_IconEvent()
+    //     playMusicItems(audio);
 
-//turn 128 seconds into 2:08
-function getTimeCodeFromNum(num) {
-  let seconds = parseInt(num);
-  let minutes = parseInt(seconds / 60);
-  seconds -= minutes * 60;
-  const hours = parseInt(minutes / 60);
-  minutes -= hours * 60;
+    //     btnPlayStopMusic.addEventListener('click', () => {
+    //         if(btnPlayMusicIcon.style.display == 'none') {
+    //             playMusicItems(audio)
+    //         } else {
+    //             pauseMusicItems(audio)
+    //         }
+    //     })
+    // });
 
-  if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-  return `${String(hours).padStart(2, 0)}:${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-}
+    // document.getElementById("music_item--2").addEventListener("click", function() {
+    //     audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
+    //     playNavbar.style.display = 'flex';
+    //     moveUpAddPlayList()
+    //     playMusic_IconEvent()
+    //     playMusicItems(audio);
+    // });
+
+    // document.getElementById("music_item--3").addEventListener("click", function() {
+    //     audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
+    //     playNavbar.style.display = 'flex';
+    //     moveUpAddPlayList()
+    //     playMusic_IconEvent()
+    //     playMusicItems(audio);
+    // });
+
+    // let audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
