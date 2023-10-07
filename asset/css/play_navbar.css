@@ -21,6 +21,11 @@
     display: flex;
 }
 
+.movedown {
+    bottom: -88px !important;
+}
+
+
 /* __________________ chung ___________________________________*/
 .play_navbar--left,
 .play_navbar--right {
@@ -297,13 +302,22 @@
     position: absolute;
     top: -26px;
 
-    background-color: aqua;
+    background-color: rgb(153, 29, 140);
     width: 70px;
     height: 26px;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --boder: 5px;
+    border-top-left-radius: var(--boder);
+    border-top-right-radius: var(--boder);
 }
 
 #hidden_play_navbar ion-icon{
     margin: auto;
 }
 
+.navbar_status--show {
+    display: none;
+}

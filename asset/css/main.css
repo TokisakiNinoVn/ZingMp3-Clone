@@ -228,14 +228,13 @@ body::-webkit-scrollbar {
     width: 143px;
 }
 
-.item_quare a p:hover {
-    color: rgb(244, 10, 252);
-}
-
-
 #special_album {
     cursor: pointer;
     color: rgb(208, 212, 212);
+}
+.item_quare a p:hover,
+#special_album:hover {
+    color: rgb(228, 109, 213);
 }
 
 

@@ -1,14 +1,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // Let variable
-    let playNavbar = document.getElementById("play_navbar");
-    let closeBtnPlayNavbar = document.getElementById("close_play_navbar");
-    let navbarLeft = document.querySelector('.navbar_scroll')
-    let addPlaylist = document.querySelector('.navbar_add--playlist')
-    let openBtnPlayNavbar = document.querySelectorAll(".play_music")
-    let btnPlayStopMusic = document.getElementById('stop_pause_music')
-    let btnPlayMusicIcon = document.querySelector('.music_status--play')
-    let btnPauseMusicIcon = document.querySelector('.music_status--pause')
+    const playNavbar = document.getElementById("play_navbar");
+    const closeBtnPlayNavbar = document.getElementById("close_play_navbar");
+    const navbarLeft = document.querySelector('.navbar_scroll')
+    const addPlaylist = document.querySelector('.navbar_add--playlist')
+    const openBtnPlayNavbar = document.querySelectorAll(".play_music")
+    const btnPlayStopMusic = document.getElementById('stop_pause_music')
+    const btnPlayMusicIcon = document.querySelector('.music_status--play')
+    const btnPauseMusicIcon = document.querySelector('.music_status--pause')
     
 
     // Modul vent function
