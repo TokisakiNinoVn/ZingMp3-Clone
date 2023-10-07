@@ -1,3 +1,26 @@
+const inforMusicItems= [
+    {
+        nameSong: "Thiếu Niên Hoa Hồng Remix",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Ai_1x1_Bloom.jpg",
+        linkSong: "../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3",
+    },
+    {
+        nameSong: "Vô Cảm Giang Thần",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Eysia_love.jpg",
+        linkSong: "../asset/img/VoCamGiangThan.mp3",
+    },
+    {
+        nameSong: "Fool For You (Kastra Remix) [Lyrics Vietsub]",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Eysia_hii.jpg",
+        linkSong: "../asset/audio/FoolForYouKastraLyricsVietsub.mp3",
+    }
+
+]
+
+
 // Load page => hiden play navbar
 window.addEventListener("load", function() {
     playNavbar.style.display = 'none';
@@ -15,12 +38,14 @@ btnHiddenPlayNavbar.addEventListener("click", function() {
         scrollToTopBtn.classList.remove('nonePlayNavbar');
         iconShow.style.display = "none";
         iconHidden.style.display = "block";
+        document.querySelector('.colab_music').style.paddingBottom = '100px';
         moveUpAddPlayList()
     } else {
         playNavbar.classList.add('movedown');
         scrollToTopBtn.classList.add('nonePlayNavbar');
         iconHidden.style.display = "none";
         iconShow.style.display = "block";
+        document.querySelector('.colab_music').style.paddingBottom = '20px';
         moveDowAddPlayList()
     }
 })
@@ -112,6 +137,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     playMusic_IconEvent()
     playMusicItems(audio)
     scrollToTopBtn.classList.remove('nonePlayNavbar');
+    document.querySelector('.colab_music').style.paddingBottom = '100px';
 
 
     let audioPlayer = document.querySelector(".audio-player");
@@ -186,6 +212,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         moveDowAddPlayList()
         pauseMusicItems(audio)
         scrollToTopBtn.classList.add('nonePlayNavbar');
+        document.querySelector('.colab_music').style.paddingBottom = '0px';
         audio = null
     });
 
@@ -207,6 +234,17 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         }
     })
 
+    //Btn loop music
+    const btnLoopMusic = document.getElementById('loop_music_items')
+    btnLoopMusic.addEventListener('click', () => {
+        if (btnLoopMusic.classList.contains('loop_music_true')) {
+            btnLoopMusic.classList.remove('loop_music_true')
+            audio.loop = false;
+        } else {
+            btnLoopMusic.classList.add('loop_music_true')
+            audio.loop = true;
+        }
+    })
 });
 
 document.getElementById("music_item--2").addEventListener("click", function() {
