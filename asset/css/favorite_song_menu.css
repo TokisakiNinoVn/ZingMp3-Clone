@@ -41,6 +41,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    /* padding: 3px 5px; */
 }
 
 .favorite_song_menu--content .content--top ion-icon{
@@ -76,3 +77,20 @@
     padding: 5px;
 }
 
+.navbar_infor--items span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar_infor--items span ion-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+
+.items_for_media ion-icon {
+    font-size: 24px;
+}
+.items_for_media ion-icon:nth-child(2) {
+    color: rgb(207, 11, 241);
+}

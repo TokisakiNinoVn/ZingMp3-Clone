@@ -1,0 +1,82 @@
+const inforMusicItems= [
+    {
+        nameSong: "Thiếu Niên Hoa Hồng Remix",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Ai_1x1_Bloom.jpg",
+        linkSong: "../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3",
+    },
+    {
+        nameSong: "Vô Cảm Giang Thần",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Eysia_love.jpg",
+        linkSong: "../asset/img/VoCamGiangThan.mp3",
+    },
+    {
+        nameSong: "Fool For You (Kastra Remix) [Lyrics Vietsub]",
+        nameSinger: "Hoshino Ai",
+        linkImgSong: "../asset/images/Eysia_hii.jpg",
+        linkSong: "../asset/audio/FoolForYouKastraLyricsVietsub.mp3",
+    }
+
+]
+
+let listMusicFavorite = [];
+var musicItem1 = {
+    linkOfItem: inforMusicItems[0].linkSong,
+    nameSong: inforMusicItems[0].nameSong,
+    nameSinger: inforMusicItems[0].nameSinger,
+    linkImgSong: inforMusicItems[0].linkImgSong,
+    album: 'Phố sau mưa',
+    totalTime: '03:30',
+}
+
+for (var key in musicItem1) {
+    if (musicItem1.hasOwnProperty(key)) {
+        var entry = {};
+        entry[key] = musicItem1[key];
+        listMusicFavorite.push(entry);
+    }
+}
+
+var musicItem2 = {
+    linkOfItem: inforMusicItems[0].linkSong,
+    nameSong: inforMusicItems[0].nameSong,
+    nameSinger: inforMusicItems[0].nameSinger,
+    linkImgSong: inforMusicItems[0].linkImgSong,
+    album: 'Phố sau mưa',
+    totalTime: '03:30',
+}
+
+for (var key in musicItem2) {
+    if (musicItem2.hasOwnProperty(key)) {
+        var entry = {};
+        entry[key] = musicItem2[key];
+        listMusicFavorite.push(entry);
+    }
+}
+
+let codeHtml_form = `
+    <div class="media_1infor">
+    <div class="media_infor--left">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+
+        <div class="div_avt_song">
+            <img src="./asset/images/Ai_1x1_Bloom.jpg" alt="">
+        </div>
+        <div class="song_tittle">
+            <span class="name_song">Thiếu niên hoa hồng Remix</span>
+            <span class="singer_song">Hoshino Ai</span>
+        </div>
+    </div>
+    <div class="media_infor--mid">
+        <span>Phố sau mưa</span>
+    </div>
+    <div class="media_infor--right">
+        <span class="total_time">10:20</span>
+        <div class="items_for_media">
+            <ion-icon id="music_item--1" class="play_music" name="play"></ion-icon>
+            <ion-icon name="heart"></ion-icon>
+        </div>
+    </div>
+    </div>
+`

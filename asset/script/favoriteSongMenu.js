@@ -24,13 +24,3 @@
 //     });
 // });
 
-const favoriteSongMenu = document.querySelector(".favorite_song_menu");
-const closeFavoriteSongMenuIcon = document.querySelector(".close_menu_favorite_song");
-
-const openFavoriteSongMenu = document.querySelector(".open_menu_favorite_list_song").addEventListener("click", () => {
-    favoriteSongMenu.style.display = "flex";
-})
-
-closeFavoriteSongMenuIcon.addEventListener("click", () => {
-    favoriteSongMenu.style.display = "none";
-})

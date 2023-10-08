@@ -125,6 +125,7 @@ function pauseMusicItems(audioVar) {
 //   return audio
 // }
 
+let listMusicFavorite = [];
 // Function event _____________________________________________________________
 document.getElementById("music_item--1").addEventListener("click", function() {
     let audio = null
@@ -144,6 +145,24 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     let nameSong = document.querySelector('.name_song--event').textContent = inforMusicItems[0].nameSong
     let singerName = document.querySelector('.singer-name--event').textContent = inforMusicItems[0].nameSinger
 
+    var musicItem1 = {
+        linkOfItem: inforMusicItems[0].linkSong,
+        nameSong: inforMusicItems[0].nameSong,
+        nameSinger: inforMusicItems[0].nameSinger,
+        linkImgSong: inforMusicItems[0].linkImgSong,
+        album: 'Phố sau mưa',
+        totalTime: '03:30',
+    }
+
+    for (var key in musicItem1) {
+        if (musicItem1.hasOwnProperty(key)) {
+          var entry = {};
+          entry[key] = musicItem1[key];
+          listMusicFavorite.push(entry);
+        }
+    }
+
+    console.log(listMusicFavorite);
 
     let audioPlayer = document.querySelector(".audio-player");
     console.dir(audio);
@@ -253,215 +272,263 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     })
 });
 
-document.getElementById("music_item--2").addEventListener("click", function() {
-    let audio = null
-    audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
-    
-    // Click button play music => show play navbar
-    playNavbar.style.display = 'flex';
-    moveUpAddPlayList()
-    playMusic_IconEvent()
-    playMusicItems(audio)
-    scrollToTopBtn.classList.remove('nonePlayNavbar');
+const favoriteSongMenu = document.querySelector(".favorite_song_menu");
+const closeFavoriteSongMenuIcon = document.querySelector(".close_menu_favorite_song");
+const listItemFavoriteSongEvent = document.querySelector(".list_items_favorite_song");
+const openFavoriteSongMenu = document.querySelector(".open_menu_favorite_list_song").addEventListener("click", () => {
+    favoriteSongMenu.style.display = "flex";
+})
+closeFavoriteSongMenuIcon.addEventListener("click", () => {
+    favoriteSongMenu.style.display = "none";
+})
 
-
-    let audioPlayer = document.querySelector(".audio-player");
-    console.dir(audio);
-    audio.addEventListener("loadeddata", () => {
-        document.querySelector(".length").textContent = getTimeCodeFromNum(audio.duration);
-        audio.volume = 1;
-    }, false
-    );
-
-    //play or pause audio upon button click
-    let playBtn = document.getElementById("stop_pause_music");
-    playBtn.addEventListener("click", () => {
-        playMusicItems(audio)
-    }, false
-    );
-
-    //click on timeline to skip around
-    let timeline = document.querySelector(".timeline");
-    timeline.addEventListener("click", e => {
-        let timelineWidth = window.getComputedStyle(timeline).width;
-        let timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
-        audio.currentTime = timeToSeek;
-
-        if (timeToSeek == getTimeCodeFromNum(audio.duration)) {
-            pauseMusic_IconEvent()
-        }
-        
-    }, false);
-
-
-    //click volume slider to change volume
-    let volumeSlider = document.querySelector(".volume-slider");
-    volumeSlider.addEventListener('click', e => {
-        let sliderWidth = window.getComputedStyle(volumeSlider).width;
-        let newVolume = e.offsetX / parseInt(sliderWidth);
-        audio.volume = newVolume;
-    let letWeidth = document.querySelector(".volume-percentage").style.width = newVolume * 100 + '%';
-
-    }, false)
-
-    //check audio percentage and update time accordingly
-    setInterval(() => {
-        let progressBar = audioPlayer.querySelector(".progress");
-        progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
-        audioPlayer.querySelector(".current").textContent = getTimeCodeFromNum(
-            audio.currentTime
-        );
-    }, 500);
-
-
-    //volume icon event
-    const volumeControlIcon = document.querySelector('.btn_volume_icon');
-    const volumeMedium = document.querySelector('.volume_medium_Icon');
-    const volumeMute = document.querySelector('.volume_mute_Icon');
-
-    volumeControlIcon.addEventListener('click', () => {
-        if (volumeMute.style.display === 'none') {
-            volumeMedium.style.display = 'none';
-            volumeMute.style.display = 'block';
-            audio.muted = true;
-        } else {
-            volumeMedium.style.display = 'block';
-            volumeMute.style.display = 'none';
-            audio.muted = false;
-        }
-    })
-
-    // Click button close play navbar => hiden play navbar
-    closeBtnPlayNavbar.addEventListener("click", () => {
-        playNavbar.style.display = 'none';
-        moveDowAddPlayList()
-        pauseMusicItems(audio)
-        scrollToTopBtn.classList.add('nonePlayNavbar')
-        audio = null
-    });
-
-    // Move "add playlist" when play navbar is show/hiden
-    if(playNavbar.style.display = 'flex' || (playNavbar.style.display = 'block')) {
-        moveUpAddPlayList()
+listItemFavoriteSongEvent.addEventListener("DOMContentLoaded", () => {
+    if (listMusicFavorite.length == 0) {
+        alert("Không có bài hát nào trong danh sách yêu thích của bạn !")
     } else {
-        moveDowAddPlayList()
-    }
-
-    // Click button play music => change icon
-    btnPlayStopMusic.addEventListener('click', () => {
-        if(btnPlayMusicIcon.style.display == 'none') {
-            playMusic_IconEvent()
-            playMusicItems(audio)
-        } else {
-            pauseMusic_IconEvent()
-            pauseMusicItems(audio)
+        for (let i = 0; i < listMusicFavorite.length; i++) {
+            let musicItem = listMusicFavorite[i];
+            htmlCode += `
+                <div class="media_1infor">
+                    <div class="media_infor--left">
+                        <ion-icon name="musical-notes-outline"></ion-icon>
+                        <div class="div_avt_song">
+                            <img src="${musicItem.linkImgSong}" alt="">
+                        </div>
+                        <div class="song_tittle">
+                            <span class="name_song">${musicItem.nameSong}</span>
+                            <span class="singer_song">${musicItem.nameSinger}</span>
+                        </div>
+                    </div>
+                    <div class="media_infor--mid">
+                        <span>${musicItem.album}</span>
+                    </div>
+                    <div class="media_infor--right">
+                        <span class="total_time">${musicItem.totalTime}</span>
+                        <div class="items_for_media">
+                            <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
+                            <ion-icon name="heart"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
-    })
-});
+        listItemFavoriteSongEvent.innerHTML = htmlCode;
+    }
+})
 
-document.getElementById("music_item--3").addEventListener("click", function() {
-    let audio = null
-    audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
+
+
+
+// document.getElementById("music_item--2").addEventListener("click", function() {
+//     let audio = null
+//     audio = new Audio("../asset/audio/VoCamGiangThan.mp3");
     
-    // Click button play music => show play navbar
-    playNavbar.style.display = 'flex';
-    moveUpAddPlayList()
-    playMusic_IconEvent()
-    playMusicItems(audio)
-    scrollToTopBtn.classList.remove('nonePlayNavbar');
+//     // Click button play music => show play navbar
+//     playNavbar.style.display = 'flex';
+//     moveUpAddPlayList()
+//     playMusic_IconEvent()
+//     playMusicItems(audio)
+//     scrollToTopBtn.classList.remove('nonePlayNavbar');
 
 
-    let audioPlayer = document.querySelector(".audio-player");
-    console.dir(audio);
-    audio.addEventListener("loadeddata", () => {
-        document.querySelector(".length").textContent = getTimeCodeFromNum(audio.duration);
-        audio.volume = 1;
-    }, false
-    );
+//     let audioPlayer = document.querySelector(".audio-player");
+//     console.dir(audio);
+//     audio.addEventListener("loadeddata", () => {
+//         document.querySelector(".length").textContent = getTimeCodeFromNum(audio.duration);
+//         audio.volume = 1;
+//     }, false
+//     );
 
-    //play or pause audio upon button click
-    let playBtn = document.getElementById("stop_pause_music");
-    playBtn.addEventListener("click", () => {
-        playMusicItems(audio)
-    }, false
-    );
+//     //play or pause audio upon button click
+//     let playBtn = document.getElementById("stop_pause_music");
+//     playBtn.addEventListener("click", () => {
+//         playMusicItems(audio)
+//     }, false
+//     );
 
-    //click on timeline to skip around
-    let timeline = document.querySelector(".timeline");
-    timeline.addEventListener("click", e => {
-        let timelineWidth = window.getComputedStyle(timeline).width;
-        let timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
-        audio.currentTime = timeToSeek;
+//     //click on timeline to skip around
+//     let timeline = document.querySelector(".timeline");
+//     timeline.addEventListener("click", e => {
+//         let timelineWidth = window.getComputedStyle(timeline).width;
+//         let timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
+//         audio.currentTime = timeToSeek;
 
-        if (timeToSeek == getTimeCodeFromNum(audio.duration)) {
-            pauseMusic_IconEvent()
-        }
+//         if (timeToSeek == getTimeCodeFromNum(audio.duration)) {
+//             pauseMusic_IconEvent()
+//         }
         
-    }, false);
+//     }, false);
 
 
-    //click volume slider to change volume
-    let volumeSlider = document.querySelector(".volume-slider");
-    volumeSlider.addEventListener('click', e => {
-        let sliderWidth = window.getComputedStyle(volumeSlider).width;
-        let newVolume = e.offsetX / parseInt(sliderWidth);
-        audio.volume = newVolume;
-    let letWeidth = document.querySelector(".volume-percentage").style.width = newVolume * 100 + '%';
+//     //click volume slider to change volume
+//     let volumeSlider = document.querySelector(".volume-slider");
+//     volumeSlider.addEventListener('click', e => {
+//         let sliderWidth = window.getComputedStyle(volumeSlider).width;
+//         let newVolume = e.offsetX / parseInt(sliderWidth);
+//         audio.volume = newVolume;
+//     let letWeidth = document.querySelector(".volume-percentage").style.width = newVolume * 100 + '%';
 
-    }, false)
+//     }, false)
 
-    //check audio percentage and update time accordingly
-    setInterval(() => {
-        let progressBar = audioPlayer.querySelector(".progress");
-        progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
-        audioPlayer.querySelector(".current").textContent = getTimeCodeFromNum(
-            audio.currentTime
-        );
-    }, 500);
+//     //check audio percentage and update time accordingly
+//     setInterval(() => {
+//         let progressBar = audioPlayer.querySelector(".progress");
+//         progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
+//         audioPlayer.querySelector(".current").textContent = getTimeCodeFromNum(
+//             audio.currentTime
+//         );
+//     }, 500);
 
 
-    //volume icon event
-    const volumeControlIcon = document.querySelector('.btn_volume_icon');
-    const volumeMedium = document.querySelector('.volume_medium_Icon');
-    const volumeMute = document.querySelector('.volume_mute_Icon');
+//     //volume icon event
+//     const volumeControlIcon = document.querySelector('.btn_volume_icon');
+//     const volumeMedium = document.querySelector('.volume_medium_Icon');
+//     const volumeMute = document.querySelector('.volume_mute_Icon');
 
-    volumeControlIcon.addEventListener('click', () => {
-        if (volumeMute.style.display === 'none') {
-            volumeMedium.style.display = 'none';
-            volumeMute.style.display = 'block';
-            audio.muted = true;
-        } else {
-            volumeMedium.style.display = 'block';
-            volumeMute.style.display = 'none';
-            audio.muted = false;
-        }
-    })
+//     volumeControlIcon.addEventListener('click', () => {
+//         if (volumeMute.style.display === 'none') {
+//             volumeMedium.style.display = 'none';
+//             volumeMute.style.display = 'block';
+//             audio.muted = true;
+//         } else {
+//             volumeMedium.style.display = 'block';
+//             volumeMute.style.display = 'none';
+//             audio.muted = false;
+//         }
+//     })
 
-    // Click button close play navbar => hiden play navbar
-    closeBtnPlayNavbar.addEventListener("click", () => {
-        playNavbar.style.display = 'none';
-        moveDowAddPlayList()
-        pauseMusicItems(audio)
-        scrollToTopBtn.classList.add('nonePlayNavbar');
-        audio = null
-    });
+//     // Click button close play navbar => hiden play navbar
+//     closeBtnPlayNavbar.addEventListener("click", () => {
+//         playNavbar.style.display = 'none';
+//         moveDowAddPlayList()
+//         pauseMusicItems(audio)
+//         scrollToTopBtn.classList.add('nonePlayNavbar')
+//         audio = null
+//     });
 
-    // Move "add playlist" when play navbar is show/hiden
-    if(playNavbar.style.display = 'flex' || (playNavbar.style.display = 'block')) {
-        moveUpAddPlayList()
-    } else {
-        moveDowAddPlayList()
-    }
+//     // Move "add playlist" when play navbar is show/hiden
+//     if(playNavbar.style.display = 'flex' || (playNavbar.style.display = 'block')) {
+//         moveUpAddPlayList()
+//     } else {
+//         moveDowAddPlayList()
+//     }
 
-    // Click button play music => change icon
-    btnPlayStopMusic.addEventListener('click', () => {
-        if(btnPlayMusicIcon.style.display == 'none') {
-            playMusic_IconEvent()
-            playMusicItems(audio)
-        } else {
-            pauseMusic_IconEvent()
-            pauseMusicItems(audio)
-        }
-    })
-});
+//     // Click button play music => change icon
+//     btnPlayStopMusic.addEventListener('click', () => {
+//         if(btnPlayMusicIcon.style.display == 'none') {
+//             playMusic_IconEvent()
+//             playMusicItems(audio)
+//         } else {
+//             pauseMusic_IconEvent()
+//             pauseMusicItems(audio)
+//         }
+//     })
+// });
+
+// document.getElementById("music_item--3").addEventListener("click", function() {
+//     let audio = null
+//     audio = new Audio("../asset/audio/FoolForYouKastraLyricsVietsub.mp3");
+    
+//     // Click button play music => show play navbar
+//     playNavbar.style.display = 'flex';
+//     moveUpAddPlayList()
+//     playMusic_IconEvent()
+//     playMusicItems(audio)
+//     scrollToTopBtn.classList.remove('nonePlayNavbar');
+
+
+//     let audioPlayer = document.querySelector(".audio-player");
+//     console.dir(audio);
+//     audio.addEventListener("loadeddata", () => {
+//         document.querySelector(".length").textContent = getTimeCodeFromNum(audio.duration);
+//         audio.volume = 1;
+//     }, false
+//     );
+
+//     //play or pause audio upon button click
+//     let playBtn = document.getElementById("stop_pause_music");
+//     playBtn.addEventListener("click", () => {
+//         playMusicItems(audio)
+//     }, false
+//     );
+
+//     //click on timeline to skip around
+//     let timeline = document.querySelector(".timeline");
+//     timeline.addEventListener("click", e => {
+//         let timelineWidth = window.getComputedStyle(timeline).width;
+//         let timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
+//         audio.currentTime = timeToSeek;
+
+//         if (timeToSeek == getTimeCodeFromNum(audio.duration)) {
+//             pauseMusic_IconEvent()
+//         }
+        
+//     }, false);
+
+
+//     //click volume slider to change volume
+//     let volumeSlider = document.querySelector(".volume-slider");
+//     volumeSlider.addEventListener('click', e => {
+//         let sliderWidth = window.getComputedStyle(volumeSlider).width;
+//         let newVolume = e.offsetX / parseInt(sliderWidth);
+//         audio.volume = newVolume;
+//     let letWeidth = document.querySelector(".volume-percentage").style.width = newVolume * 100 + '%';
+
+//     }, false)
+
+//     //check audio percentage and update time accordingly
+//     setInterval(() => {
+//         let progressBar = audioPlayer.querySelector(".progress");
+//         progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
+//         audioPlayer.querySelector(".current").textContent = getTimeCodeFromNum(
+//             audio.currentTime
+//         );
+//     }, 500);
+
+
+//     //volume icon event
+//     const volumeControlIcon = document.querySelector('.btn_volume_icon');
+//     const volumeMedium = document.querySelector('.volume_medium_Icon');
+//     const volumeMute = document.querySelector('.volume_mute_Icon');
+
+//     volumeControlIcon.addEventListener('click', () => {
+//         if (volumeMute.style.display === 'none') {
+//             volumeMedium.style.display = 'none';
+//             volumeMute.style.display = 'block';
+//             audio.muted = true;
+//         } else {
+//             volumeMedium.style.display = 'block';
+//             volumeMute.style.display = 'none';
+//             audio.muted = false;
+//         }
+//     })
+
+//     // Click button close play navbar => hiden play navbar
+//     closeBtnPlayNavbar.addEventListener("click", () => {
+//         playNavbar.style.display = 'none';
+//         moveDowAddPlayList()
+//         pauseMusicItems(audio)
+//         scrollToTopBtn.classList.add('nonePlayNavbar');
+//         audio = null
+//     });
+
+//     // Move "add playlist" when play navbar is show/hiden
+//     if(playNavbar.style.display = 'flex' || (playNavbar.style.display = 'block')) {
+//         moveUpAddPlayList()
+//     } else {
+//         moveDowAddPlayList()
+//     }
+
+//     // Click button play music => change icon
+//     btnPlayStopMusic.addEventListener('click', () => {
+//         if(btnPlayMusicIcon.style.display == 'none') {
+//             playMusic_IconEvent()
+//             playMusicItems(audio)
+//         } else {
+//             pauseMusic_IconEvent()
+//             pauseMusicItems(audio)
+//         }
+//     })
+// });
 
