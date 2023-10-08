@@ -282,39 +282,35 @@ closeFavoriteSongMenuIcon.addEventListener("click", () => {
     favoriteSongMenu.style.display = "none";
 })
 
-listItemFavoriteSongEvent.addEventListener("DOMContentLoaded", () => {
-    if (listMusicFavorite.length == 0) {
-        alert("Không có bài hát nào trong danh sách yêu thích của bạn !")
-    } else {
-        for (let i = 0; i < listMusicFavorite.length; i++) {
-            let musicItem = listMusicFavorite[i];
-            htmlCode += `
-                <div class="media_1infor">
-                    <div class="media_infor--left">
-                        <ion-icon name="musical-notes-outline"></ion-icon>
-                        <div class="div_avt_song">
-                            <img src="${musicItem.linkImgSong}" alt="">
-                        </div>
-                        <div class="song_tittle">
-                            <span class="name_song">${musicItem.nameSong}</span>
-                            <span class="singer_song">${musicItem.nameSinger}</span>
-                        </div>
+const addMusicFavorite = document.querySelector(".add_to_favo_list--1").addEventListener("click", () => {
+    for (let i = 0; i < listMusicFavorite.length; i++) {
+        let musicItem = listMusicFavorite[i];
+        htmlCode += `
+            <div class="media_1infor">
+                <div class="media_infor--left">
+                    <ion-icon name="musical-notes-outline"></ion-icon>
+                    <div class="div_avt_song">
+                        <img src="${musicItem.linkImgSong}" alt="">
                     </div>
-                    <div class="media_infor--mid">
-                        <span>${musicItem.album}</span>
-                    </div>
-                    <div class="media_infor--right">
-                        <span class="total_time">${musicItem.totalTime}</span>
-                        <div class="items_for_media">
-                            <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
-                            <ion-icon name="heart"></ion-icon>
-                        </div>
+                    <div class="song_tittle">
+                        <span class="name_song">${musicItem.nameSong}</span>
+                        <span class="singer_song">${musicItem.nameSinger}</span>
                     </div>
                 </div>
-            `;
-        }
-        listItemFavoriteSongEvent.innerHTML = htmlCode;
+                <div class="media_infor--mid">
+                    <span>${musicItem.album}</span>
+                </div>
+                <div class="media_infor--right">
+                    <span class="total_time">${musicItem.totalTime}</span>
+                    <div class="items_for_media">
+                        <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        `;
     }
+    listItemFavoriteSongEvent.innerHTML = htmlCode;
 })
 
 
