@@ -139,6 +139,11 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     scrollToTopBtn.classList.remove('nonePlayNavbar');
     document.querySelector('.colab_music').style.paddingBottom = '100px';
 
+    let imageOfSong = document.querySelector('.image_of_song').textContent = inforMusicItems[0].linkImgSong
+    let titleDocument = document.querySelector('.title_document').innerHTML = inforMusicItems[0].nameSong
+    let nameSong = document.querySelector('.name_song--event').textContent = inforMusicItems[0].nameSong
+    let singerName = document.querySelector('.singer-name--event').textContent = inforMusicItems[0].nameSinger
+
 
     let audioPlayer = document.querySelector(".audio-player");
     console.dir(audio);
@@ -213,6 +218,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         pauseMusicItems(audio)
         scrollToTopBtn.classList.add('nonePlayNavbar');
         document.querySelector('.colab_music').style.paddingBottom = '0px';
+        document.querySelector('.title_document').innerHTML = 'Zing MP3 - Nghe nhạc mới, HOT nhất và tải nhạc miễn phí'
         audio = null
     });
 
