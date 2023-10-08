@@ -61,10 +61,6 @@ clickRightBtn.addEventListener("click", () => {
 // });
 
 
-
-
-
-
 // Main Scroll 1 hidden Event
 const specialAlbum = document.getElementById("special_album");
 const mainScrollEvent = document.getElementById("main_scroll");

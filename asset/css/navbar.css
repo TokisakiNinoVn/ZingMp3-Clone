@@ -1,3 +1,7 @@
+* {
+    transition: all 0.2s ease-in-out !important;
+}
+
 a {
     color: rgb(208, 212, 212);
 }
@@ -170,16 +174,28 @@ a li ion-icon {
 /* ________________________[ navbar_item ]_______________________________________________________ */
 .navbar_item {
     margin: 20px auto;
+    color: rgb(152, 152, 152);
 }
-.navbar_item a:hover {
+.navbar_item li:hover {
     color: white;
+    cursor: pointer;
 }
-.navbar_item a li {
+.navbar_item li {
     height: 48px;
     padding-left: 20px;
 }
-.navbar_item a li span{
+.navbar_item li span{
     margin-left: 10px;
+}
+
+.navbar_item li:nth-child(2) ion-icon {
+    color: rgb(255, 0, 255);
+    display: none;
+    margin-left: 35px;
+    font-size: 22px;
+}
+.navbar_item li:nth-child(2):hover ion-icon {
+    display: flex;
 }
 
 
