@@ -125,7 +125,6 @@ function pauseMusicItems(audioVar) {
 //   return audio
 // }
 
-let listMusicFavorite = [];
 // Function event _____________________________________________________________
 document.getElementById("music_item--1").addEventListener("click", function() {
     let audio = null
@@ -145,24 +144,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     let nameSong = document.querySelector('.name_song--event').textContent = inforMusicItems[0].nameSong
     let singerName = document.querySelector('.singer-name--event').textContent = inforMusicItems[0].nameSinger
 
-    var musicItem1 = {
-        linkOfItem: inforMusicItems[0].linkSong,
-        nameSong: inforMusicItems[0].nameSong,
-        nameSinger: inforMusicItems[0].nameSinger,
-        linkImgSong: inforMusicItems[0].linkImgSong,
-        album: 'Phố sau mưa',
-        totalTime: '03:30',
-    }
 
-    for (var key in musicItem1) {
-        if (musicItem1.hasOwnProperty(key)) {
-          var entry = {};
-          entry[key] = musicItem1[key];
-          listMusicFavorite.push(entry);
-        }
-    }
-
-    console.log(listMusicFavorite);
 
     let audioPlayer = document.querySelector(".audio-player");
     console.dir(audio);
@@ -282,36 +264,101 @@ closeFavoriteSongMenuIcon.addEventListener("click", () => {
     favoriteSongMenu.style.display = "none";
 })
 
-const addMusicFavorite = document.querySelector(".add_to_favo_list--1").addEventListener("click", () => {
-    for (let i = 0; i < listMusicFavorite.length; i++) {
-        let musicItem = listMusicFavorite[i];
-        htmlCode += `
-            <div class="media_1infor">
-                <div class="media_infor--left">
-                    <ion-icon name="musical-notes-outline"></ion-icon>
-                    <div class="div_avt_song">
-                        <img src="${musicItem.linkImgSong}" alt="">
-                    </div>
-                    <div class="song_tittle">
-                        <span class="name_song">${musicItem.nameSong}</span>
-                        <span class="singer_song">${musicItem.nameSinger}</span>
-                    </div>
+
+// let listMusicFavorite = [];
+// const addMusicFavorite = document.querySelector(".add_to_favo_list--1").addEventListener("click", () => {
+//     var musicItem1 = {
+//         linkOfItem: inforMusicItems[0].linkSong,
+//         nameSong: inforMusicItems[0].nameSong,
+//         nameSinger: inforMusicItems[0].nameSinger,
+//         linkImgSong: inforMusicItems[0].linkImgSong,
+//         album: 'Phố sau mưa',
+//         totalTime: '03:30',
+//     }
+
+//     for (var key in musicItem1) {
+//         if (musicItem1.hasOwnProperty(key)) {
+//           var entry = {};
+//           entry[key] = musicItem1[key];
+//           listMusicFavorite.push(entry);
+//         }
+//     }
+
+//     console.log(listMusicFavorite);
+//     let htmlCode = '';
+//     for (let i = 0; i < listMusicFavorite.length; i++) {
+//         let musicItem = listMusicFavorite[i];
+//         htmlCode += `
+//             <div class="media_1infor">
+//                 <div class="media_infor--left">
+//                     <ion-icon name="musical-notes-outline"></ion-icon>
+//                     <div class="div_avt_song">
+//                         <img src="${musicItem.linkImgSong}" alt="">
+//                     </div>
+//                     <div class="song_tittle">
+//                         <span class="name_song">${musicItem.nameSong}</span>
+//                         <span class="singer_song">${musicItem.nameSinger}</span>
+//                     </div>
+//                 </div>
+//                 <div class="media_infor--mid">
+//                     <span>${musicItem.album}</span>
+//                 </div>
+//                 <div class="media_infor--right">
+//                     <span class="total_time">${musicItem.totalTime}</span>
+//                     <div class="items_for_media">
+//                         <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
+//                         <ion-icon name="heart"></ion-icon>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
+//         listItemFavoriteSongEvent.innerHTML = htmlCode;
+//     }
+// })
+
+
+const listMusicFavorite = [];
+const addMusicFavorite = document.querySelector(".add_to_favo_list--1");
+
+addMusicFavorite.addEventListener("click", () => {
+    const musicItem1 = {
+        linkOfItem: inforMusicItems[0].linkSong,
+        nameSong: inforMusicItems[0].nameSong,
+        nameSinger: inforMusicItems[0].nameSinger,
+        linkImgSong: inforMusicItems[0].linkImgSong,
+        album: 'Phố sau mưa',
+        totalTime: '03:30',
+    };
+
+    listMusicFavorite.push(musicItem1);
+
+    const htmlCode = listMusicFavorite.map((musicItem, i) => `
+        <div class="media_1infor">
+            <div class="media_infor--left">
+                <ion-icon name="musical-notes-outline"></ion-icon>
+                <div class="div_avt_song">
+                    <img src="${musicItem.linkImgSong}" alt="">
                 </div>
-                <div class="media_infor--mid">
-                    <span>${musicItem.album}</span>
-                </div>
-                <div class="media_infor--right">
-                    <span class="total_time">${musicItem.totalTime}</span>
-                    <div class="items_for_media">
-                        <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
-                        <ion-icon name="heart"></ion-icon>
-                    </div>
+                <div class="song_tittle">
+                    <span class="name_song">${musicItem.nameSong}</span>
+                    <span class="singer_song">${musicItem.nameSinger}</span>
                 </div>
             </div>
-        `;
-    }
+            <div class="media_infor--mid">
+                <span>${musicItem.album}</span>
+            </div>
+            <div class="media_infor--right">
+                <span class="total_time">${musicItem.totalTime}</span>
+                <div class="items_for_media">
+                    <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
+                    <ion-icon name="heart"></ion-icon>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
     listItemFavoriteSongEvent.innerHTML = htmlCode;
-})
+});
 
 
 
