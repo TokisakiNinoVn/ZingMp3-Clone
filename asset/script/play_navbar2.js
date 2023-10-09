@@ -17,7 +17,6 @@ const inforMusicItems= [
         linkImgSong: "../asset/images/Eysia_hii.jpg",
         linkSong: "../asset/audio/FoolForYouKastraLyricsVietsub.mp3",
     }
-
 ]
 
 
@@ -94,20 +93,6 @@ function getTimeCodeFromNum(num) {
         seconds % 60
     ).padStart(2, 0)}`;
 }
-
-function getTimeCodeFromNum(num) {
-    let seconds = parseInt(num);
-    let minutes = parseInt(seconds / 60);
-    seconds -= minutes * 60;
-    let hours = parseInt(minutes / 60);
-    minutes -= hours * 60;
-
-    if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-        return `${String(hours).padStart(2, 0)}:${minutes}:${String(
-            seconds % 60
-        ).padStart(2, 0)
-    }`;
-}
     
 function playMusicItems(audioVar) {
     audioVar.play();
@@ -117,19 +102,11 @@ function pauseMusicItems(audioVar) {
     audioVar.pause();
 }
 
+// ________________________ Event 1_____________________________________________________________
 
-// let audio = null;
-// function createOrUpdateAudio(audioFile) {
-//   audio.pause();
-//   audio = new Audio(audioFile);
-//   return audio
-// }
-
-// Function event _____________________________________________________________
 document.getElementById("music_item--1").addEventListener("click", function() {
     let audio = null
     audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
-    // createOrUpdateAudio(audio);
     
     // Click button play music => show play navbar
     playNavbar.style.display = 'flex';
@@ -317,8 +294,76 @@ closeFavoriteSongMenuIcon.addEventListener("click", () => {
 // })
 
 
+// const listMusicFavorite = [];
+// const addMusicFavorite = document.querySelector(".add_to_favo_list--1");
+
+// addMusicFavorite.addEventListener("click", () => {
+//     const musicItem1 = {
+//         linkOfItem: inforMusicItems[0].linkSong,
+//         nameSong: inforMusicItems[0].nameSong,
+//         nameSinger: inforMusicItems[0].nameSinger,
+//         linkImgSong: inforMusicItems[0].linkImgSong,
+//         album: 'Phố sau mưa',
+//         totalTime: '03:30',
+//     };
+
+//     listMusicFavorite.push(musicItem1);
+//     const htmlCode = listMusicFavorite.map((musicItem, i) => `
+//         <div class="media_1infor">
+//             <div class="media_infor--left">
+//                 <ion-icon name="musical-notes-outline"></ion-icon>
+//                 <div class="div_avt_song">
+//                     <img src="${musicItem.linkImgSong}" alt="">
+//                 </div>
+//                 <div class="song_tittle">
+//                     <span class="name_song">${musicItem.nameSong}</span>
+//                     <span class="singer_song">${musicItem.nameSinger}</span>
+//                 </div>
+//             </div>
+//             <div class="media_infor--mid">
+//                 <span>${musicItem.album}</span>
+//             </div>
+//             <div class="media_infor--right">
+//                 <span class="total_time">${musicItem.totalTime}</span>
+//                 <div class="items_for_media">
+//                     <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
+//                     <ion-icon class="remote_item_music" data-id="${i + 1}" name="heart"></ion-icon>
+//                 </div>
+//             </div>
+//         </div>
+//     `).join('');
+
+//     listItemFavoriteSongEvent.innerHTML = htmlCode;
+//     alert("Đã thêm vào danh sách yêu thích");
+// });
+
+// // Lấy tất cả các phần tử có class "play_music"
+// const remoteItemMusic = document.querySelectorAll(".remote_item_music");
+// remoteItemMusic.forEach((icon) => {
+//     icon.addEventListener("click", (event) => {
+//         // Lấy giá trị data-id của biểu tượng đã nhấp
+//         const id = event.currentTarget.getAttribute("data-id");
+
+//         // Xóa vị trí tương ứng của phần tử trong mảng listMusicFavorite
+//         listMusicFavorite.splice(id - 1, 1);
+
+//         // Xóa phần tử cha chứa biểu tượng đã nhấp
+//         const mediaItem = event.currentTarget.closest(".media_1infor");
+//         mediaItem.remove();
+//         alert("Đã xóa khỏi danh sách yêu thích");
+//     });
+// });
+
+
+
+
 const listMusicFavorite = [];
+
 const addMusicFavorite = document.querySelector(".add_to_favo_list--1");
+// const listItemFavoriteSongEvent = document.querySelector(".list_items_favorite_song");
+
+const closeMenuFavoriteSong = document.querySelector(".close_menu_favorite_song");
+// const favoriteSongMenu = document.querySelector(".favorite_song_menu");
 
 addMusicFavorite.addEventListener("click", () => {
     const musicItem1 = {
@@ -351,14 +396,33 @@ addMusicFavorite.addEventListener("click", () => {
                 <span class="total_time">${musicItem.totalTime}</span>
                 <div class="items_for_media">
                     <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
-                    <ion-icon name="heart"></ion-icon>
+                    <ion-icon class="remote_item_music" data-id="${i + 1}" name="heart"></ion-icon>
                 </div>
             </div>
         </div>
     `).join('');
 
     listItemFavoriteSongEvent.innerHTML = htmlCode;
+    alert("Đã thêm vào danh sách yêu thích");
 });
+
+const remoteItemMusic = document.querySelectorAll(".remote_item_music");
+remoteItemMusic.forEach((icon) => {
+    icon.addEventListener("click", (event) => {
+        const id = event.currentTarget.getAttribute("data-id");
+        listMusicFavorite.splice(id - 1, 1);
+        event.currentTarget.closest(".media_1infor").remove();
+        alert("Đã xóa khỏi danh sách yêu thích");
+    });
+});
+
+
+closeMenuFavoriteSong.addEventListener("click", () => {
+    favoriteSongMenu.style.display = "none";
+});
+
+
+
 
 
 

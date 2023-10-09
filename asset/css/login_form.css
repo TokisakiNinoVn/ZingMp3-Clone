@@ -1,0 +1,159 @@
+.form_login {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.501);
+    display: none;
+}
+
+.form_login_main {
+    width: 600px;
+    height: 700px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(135deg, #d302ec 8%, #00fafb 97%);
+
+    position: relative;
+}
+
+.form_login_main .close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.form_login_main .close ion-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.form_login_main .close ion-icon:hover {
+    background-color: rgb(129, 53, 148);
+    color: rgb(255, 255, 255);
+    transform: rotate(180deg);
+}
+
+.form_login_main .logo_form_login {
+    font-size: 100px;
+}
+
+.form_login_main h2 {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+ul.list_options {
+    width: 60%;
+    margin-top: 30px;
+}
+
+ul.list_options li ion-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+ul.list_options li {
+    list-style: none;
+    padding: 7px 0px 7px 18px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+ul.list_options li:hover {
+    background-color: rgba(240, 248, 255, 0.649);
+}
+
+ul.list_options li:last-child {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+ul.list_options li:last-child:hover {
+    background-color: rgba(212, 0, 255, 0.401);
+}
+
+.form_login_main .time_now {
+    position: absolute;
+    bottom: 20px;
+
+    margin-top: 50px;
+}
+
+
+
+
+ul.login_congdong {
+    display: none;
+    width: 300px;
+}
+
+
+ul.login_congdong li {
+    list-style: none;
+    --padding-top-bottom: 3px;
+    padding: var(--padding-top-bottom) 0px var(--padding-top-bottom) 10px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgb(0, 0, 0);
+    /* background-color: rgb(205, 113, 219); */
+}
+
+ul.login_congdong li ion-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.login_congdong input {
+    background-color: unset;
+    outline: unset;
+    border: unset;
+    width: 210px;
+    color: white;
+}
+.login_congdong input:focus {
+    outline: unset;
+    border: unset;
+}
+
+.login_congdong button {
+    background-color: unset;
+    border: unset;
+}
+
+ul.login_congdong li:last-child {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+ul.login_congdong li:last-child:hover {
+    background-color: rgba(212, 0, 255, 0.401);
+}
+
+ul.login_congdong span,
+ul.login_congdong li button {
+    margin: 5px auto;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+ul.login_congdong #logout_btn {
+    display: none;
+}

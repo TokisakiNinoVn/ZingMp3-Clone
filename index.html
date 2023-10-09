@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./asset/css/main_scroll2.css">
     <link rel="stylesheet" href="./asset/css/play_navbar.css">
     <link rel="stylesheet" href="./asset/css/scroll_to_top.css">
+    <link rel="stylesheet" href="./asset/css/login_form.css">
     <link rel="stylesheet" href="./asset/css/favorite_song_menu.css">
     
     <!-- Main Scroll -->
@@ -245,9 +246,17 @@
                         <ion-icon class="setting_icon" name="settings-outline"></ion-icon>
                     </a>
                 </div>
-                <a href="https://nino.is-a.dev/" target="_blank">
-                    <img src="./asset/images/Avt.jpg" alt="">
-                </a>
+                
+                <div class="profile">
+                    <div class="login--false">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div class="login--true">
+                        <a href="https://nino.is-a.dev/" target="_blank">
+                            <img src="./asset/images/Avt.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
 
             </div>
@@ -822,12 +831,73 @@
             </div>
         </div>
 
+        <!-- ------------------------------------ Scroll to top -------------------------------->
         <button class="scrollToTopBtn nonePlayNavbar">
             <ion-icon name="chevron-up-outline" class="chevron-up-outline"></ion-icon>
-        </button>
+        </button>        
 
     </div>
 
+    
+    <!-- ------------------------------------ Formlogin -------------------------------->
+    <div class="form_login">
+        <div class="form_login_main">
+            <div class="close">
+                <ion-icon id="close_form--login" name="close-outline"></ion-icon>
+            </div>
+            <ion-icon class="logo_form_login" name="logo-github"></ion-icon>
+            <h2>Chào mừng bạn đến với Zing.mp3</h2>
+            <ul class="list_options">
+                <li>
+                    <ion-icon name="logo-google"></ion-icon>
+                    <span>Đăng nhập với Google</span>
+                </li>
+                <li>
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                    <span>Đăng nhập với Tiktok</span>
+                </li>
+                <li>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <span>Đăng nhập với Facebook</span>
+                </li>
+                <li>
+                    <ion-icon name="logo-wechat"></ion-icon>
+                    <span>Đăng nhập với Zalo</span>
+                </li>
+                <li class="open_login_admin">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <span>Đăng nhập đặc biệt</span>
+                </li>
+                <li id="close_form--login2" >Đóng</li>
+            </ul>
+
+            <ul class="login_congdong">
+                <li>
+                    <ion-icon  name="person-circle-outline"></ion-icon>
+                    <input class="username" type="text" placeholder="User name">
+                </li>
+                <li>
+                    <ion-icon name="finger-print-outline"></ion-icon>
+                    <input class="password" type="password" placeholder="password">
+                </li>
+                <li><span>Quên mật khẩu</span></li>
+                <li id="login_btn">
+                    <button><span class="">Đăng Nhập</span></button>
+                </li>
+                <li id="logout_btn">
+                    <button><span class="">Đăng Xuất</span></button>
+                </li>
+                <li class="back_to_opsion--li back_to_opsion">
+                    <ion-icon class="back_to_opsion" name="arrow-back-outline"></ion-icon>
+                </li>
+            </ul>
+
+            <span class="time_now">{...}</span>
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------ Favorite list -------------------------------->
     <div class="favorite_song_menu">
         <div class="favorite_song_menu--content">
             <div class="content--top">
@@ -862,11 +932,11 @@
                             <span>Phố sau mưa</span>
                         </div>
                         <div class="media_infor--right">
-                            <span class="total_time">10:20</span>
                             <div class="items_for_media">
                                 <ion-icon id="music_item--1" class="play_music" name="play"></ion-icon>
                                 <ion-icon name="heart"></ion-icon>
                             </div>
+                            <span class="total_time">10:20</span>
                         </div>
                     </div> -->
                     
@@ -877,6 +947,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <script src="./asset/script/main.js"></script>
     <script src="./asset/script/scan_music.js"></script>
     <script src="./asset/audio/audio.js"></script>
@@ -884,6 +958,7 @@
     <script src="./asset/script/play_navbar2.js"></script>
     <script src="./asset/script/scroll_to_top.js"></script>
     <script src="./asset/script/favoriteSongMenu.js"></script>
+    <script src="./asset/script/login_form.js"></script>
 
     <!-- icon font -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
