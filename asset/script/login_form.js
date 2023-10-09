@@ -50,7 +50,7 @@ document.getElementById('login_btn').addEventListener('click', () => {
             document.querySelector('.back_to_opsion--li').style.display = 'none';
             document.getElementById('logout_btn').style.display = 'flex';
             document.getElementById('login_btn').style.display = 'none';
-            alert('Đăng nhập thành công');
+            alert('Chào mừng bạn trở lại ' + `@${getUserName}` + '!');
     } else if ((getUserName == '' || getPassword == '')) {
         alert('Vui lòng nhập đầy đủ thông tin');
     } else {
@@ -79,7 +79,10 @@ document.querySelector('.back_to_opsion').addEventListener('click', () => {
     statusAccount = false;
 });
 
-
+//forget password
+document.querySelector('.forget_pw').addEventListener('click', () => {
+    alert('Vui lòng điền lại tài khoản và mật khẩu mà bạn đã quên trước đó! =)');
+});
 
 // Cập nhật thời gian mỗi giây
 setInterval(updateClock, 500);
