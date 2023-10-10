@@ -1,3 +1,9 @@
+// Load page => hiden play navbar
+// window.addEventListener("load", function() {
+//     playNavbar.style.display = 'none';
+//     moveDowAddPlayList()
+// });
+
 const inforMusicItems= [
     {
         nameSong: "Thiếu Niên Hoa Hồng Remix",
@@ -20,11 +26,6 @@ const inforMusicItems= [
 ]
 
 
-// Load page => hiden play navbar
-window.addEventListener("load", function() {
-    playNavbar.style.display = 'none';
-    moveDowAddPlayList()
-});
 
 const btnHiddenPlayNavbar = document.getElementById("hidden_play_navbar")
 const iconHidden = document.querySelector(".navbar_status--hidden")
@@ -56,8 +57,9 @@ const navbarLeft = document.querySelector('.navbar_scroll')
 const addPlaylist = document.querySelector('.navbar_add--playlist')
 const openBtnPlayNavbar = document.querySelectorAll(".play_music")
 const btnPlayStopMusic = document.getElementById('stop_pause_music')
-const btnPlayMusicIcon = document.querySelector('.music_status--play')
-const btnPauseMusicIcon = document.querySelector('.music_status--pause')
+
+const playIcon = document.querySelector('.music_status--play')
+const pauseIcon = document.querySelector('.music_status--pause')
 
 
 // Modul vent function
@@ -71,15 +73,29 @@ function moveUpAddPlayList() {
     addPlaylist.style.bottom = 'unset'
 }
 
+
+
+function statusIconPlayPauseMusic()  {
+    if(playIcon.style.display == 'none') {
+        playIcon.style.display = 'block'
+        pauseIcon.style.display = 'none'
+    } else {
+        playIcon.style.display = 'none'
+        pauseIcon.style.display = 'block'
+    }
+}
+
 function playMusic_IconEvent() {
-    btnPlayMusicIcon.style.display = 'block'
-    btnPauseMusicIcon.style.display = 'none'
+    playIcon.style.display = 'block'
+    pauseIcon.style.display = 'none'
 }
 
 function pauseMusic_IconEvent() {
-    btnPlayMusicIcon.style.display = 'none'
-    btnPauseMusicIcon.style.display = 'block'
+    playIcon.style.display = 'none'
+    pauseIcon.style.display = 'block'
 }
+
+
 
 function getTimeCodeFromNum(num) {
     let seconds = parseInt(num);
@@ -93,13 +109,32 @@ function getTimeCodeFromNum(num) {
         seconds % 60
     ).padStart(2, 0)}`;
 }
-    
-function playMusicItems(audioVar) {
-    audioVar.play();
-}
 
+
+
+function musicStatusPlayPause(audio) {
+    if (audio.paused == 'true') {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+function playMusicItems(audioVar) {
+    audioVar.play()
+    // playIcon()
+}
 function pauseMusicItems(audioVar) {
     audioVar.pause();
+}
+
+
+
+function statusPlayMusicNavBar () {
+    if (playNavbar.style.display == 'none') {
+        playNavbar.style.display = 'flex';
+    } else {
+        playNavbar.style.display = 'none';
+    }
 }
 
 // ________________________ Event 1_____________________________________________________________
@@ -108,8 +143,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     let audio = null
     audio = new Audio("../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3");
     
-    // Click button play music => show play navbar
-    playNavbar.style.display = 'flex';
+    statusPlayMusicNavBar()
     moveUpAddPlayList()
     playMusic_IconEvent()
     playMusicItems(audio)
@@ -127,15 +161,14 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     console.dir(audio);
     audio.addEventListener("loadeddata", () => {
         document.querySelector(".length").textContent = getTimeCodeFromNum(audio.duration);
-        audio.volume = 1;
+        audio.volume = .5;
     }, false
     );
 
     //play or pause audio upon button click
-    let playBtn = document.getElementById("stop_pause_music");
-    playBtn.addEventListener("click", () => {
-        playMusicItems(audio)
-    }, false
+    let playBtn = document.getElementById("stop_pause_music").addEventListener("click", () => {
+            playMusicItems(audio)
+        }, false
     );
 
     //click on timeline to skip around
@@ -189,11 +222,12 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         }
     })
 
-    // Click button close play navbar => hiden play navbar
+
+    // Click button close play navbar
     closeBtnPlayNavbar.addEventListener("click", () => {
         playNavbar.style.display = 'none';
         moveDowAddPlayList()
-        pauseMusicItems(audio)
+        musicStatusPlayPause(audio)
         scrollToTopBtn.classList.add('nonePlayNavbar');
         document.querySelector('.colab_music').style.paddingBottom = '0px';
         document.querySelector('.title_document').innerHTML = 'Zing MP3 - Nghe nhạc mới, HOT nhất và tải nhạc miễn phí'
@@ -207,9 +241,9 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         moveDowAddPlayList()
     }
 
-    // Click button play music => change icon
+    // Click button play/pause music + change icon
     btnPlayStopMusic.addEventListener('click', () => {
-        if(btnPlayMusicIcon.style.display == 'none') {
+        if(audio.pause() == 'true' || playIcon.style.display == 'none') {
             playMusic_IconEvent()
             playMusicItems(audio)
         } else {
@@ -240,119 +274,6 @@ const openFavoriteSongMenu = document.querySelector(".open_menu_favorite_list_so
 closeFavoriteSongMenuIcon.addEventListener("click", () => {
     favoriteSongMenu.style.display = "none";
 })
-
-
-// let listMusicFavorite = [];
-// const addMusicFavorite = document.querySelector(".add_to_favo_list--1").addEventListener("click", () => {
-//     var musicItem1 = {
-//         linkOfItem: inforMusicItems[0].linkSong,
-//         nameSong: inforMusicItems[0].nameSong,
-//         nameSinger: inforMusicItems[0].nameSinger,
-//         linkImgSong: inforMusicItems[0].linkImgSong,
-//         album: 'Phố sau mưa',
-//         totalTime: '03:30',
-//     }
-
-//     for (var key in musicItem1) {
-//         if (musicItem1.hasOwnProperty(key)) {
-//           var entry = {};
-//           entry[key] = musicItem1[key];
-//           listMusicFavorite.push(entry);
-//         }
-//     }
-
-//     console.log(listMusicFavorite);
-//     let htmlCode = '';
-//     for (let i = 0; i < listMusicFavorite.length; i++) {
-//         let musicItem = listMusicFavorite[i];
-//         htmlCode += `
-//             <div class="media_1infor">
-//                 <div class="media_infor--left">
-//                     <ion-icon name="musical-notes-outline"></ion-icon>
-//                     <div class="div_avt_song">
-//                         <img src="${musicItem.linkImgSong}" alt="">
-//                     </div>
-//                     <div class="song_tittle">
-//                         <span class="name_song">${musicItem.nameSong}</span>
-//                         <span class="singer_song">${musicItem.nameSinger}</span>
-//                     </div>
-//                 </div>
-//                 <div class="media_infor--mid">
-//                     <span>${musicItem.album}</span>
-//                 </div>
-//                 <div class="media_infor--right">
-//                     <span class="total_time">${musicItem.totalTime}</span>
-//                     <div class="items_for_media">
-//                         <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
-//                         <ion-icon name="heart"></ion-icon>
-//                     </div>
-//                 </div>
-//             </div>
-//         `;
-//         listItemFavoriteSongEvent.innerHTML = htmlCode;
-//     }
-// })
-
-
-// const listMusicFavorite = [];
-// const addMusicFavorite = document.querySelector(".add_to_favo_list--1");
-
-// addMusicFavorite.addEventListener("click", () => {
-//     const musicItem1 = {
-//         linkOfItem: inforMusicItems[0].linkSong,
-//         nameSong: inforMusicItems[0].nameSong,
-//         nameSinger: inforMusicItems[0].nameSinger,
-//         linkImgSong: inforMusicItems[0].linkImgSong,
-//         album: 'Phố sau mưa',
-//         totalTime: '03:30',
-//     };
-
-//     listMusicFavorite.push(musicItem1);
-//     const htmlCode = listMusicFavorite.map((musicItem, i) => `
-//         <div class="media_1infor">
-//             <div class="media_infor--left">
-//                 <ion-icon name="musical-notes-outline"></ion-icon>
-//                 <div class="div_avt_song">
-//                     <img src="${musicItem.linkImgSong}" alt="">
-//                 </div>
-//                 <div class="song_tittle">
-//                     <span class="name_song">${musicItem.nameSong}</span>
-//                     <span class="singer_song">${musicItem.nameSinger}</span>
-//                 </div>
-//             </div>
-//             <div class="media_infor--mid">
-//                 <span>${musicItem.album}</span>
-//             </div>
-//             <div class="media_infor--right">
-//                 <span class="total_time">${musicItem.totalTime}</span>
-//                 <div class="items_for_media">
-//                     <ion-icon id="music_item--${i + 1}" class="play_music" name="play"></ion-icon>
-//                     <ion-icon class="remote_item_music" data-id="${i + 1}" name="heart"></ion-icon>
-//                 </div>
-//             </div>
-//         </div>
-//     `).join('');
-
-//     listItemFavoriteSongEvent.innerHTML = htmlCode;
-//     alert("Đã thêm vào danh sách yêu thích");
-// });
-
-// // Lấy tất cả các phần tử có class "play_music"
-// const remoteItemMusic = document.querySelectorAll(".remote_item_music");
-// remoteItemMusic.forEach((icon) => {
-//     icon.addEventListener("click", (event) => {
-//         // Lấy giá trị data-id của biểu tượng đã nhấp
-//         const id = event.currentTarget.getAttribute("data-id");
-
-//         // Xóa vị trí tương ứng của phần tử trong mảng listMusicFavorite
-//         listMusicFavorite.splice(id - 1, 1);
-
-//         // Xóa phần tử cha chứa biểu tượng đã nhấp
-//         const mediaItem = event.currentTarget.closest(".media_1infor");
-//         mediaItem.remove();
-//         alert("Đã xóa khỏi danh sách yêu thích");
-//     });
-// });
 
 
 
@@ -523,7 +444,7 @@ closeMenuFavoriteSong.addEventListener("click", () => {
 
 //     // Click button play music => change icon
 //     btnPlayStopMusic.addEventListener('click', () => {
-//         if(btnPlayMusicIcon.style.display == 'none') {
+//         if(playIcon.style.display == 'none') {
 //             playMusic_IconEvent()
 //             playMusicItems(audio)
 //         } else {
@@ -629,7 +550,7 @@ closeMenuFavoriteSong.addEventListener("click", () => {
 
 //     // Click button play music => change icon
 //     btnPlayStopMusic.addEventListener('click', () => {
-//         if(btnPlayMusicIcon.style.display == 'none') {
+//         if(playIcon.style.display == 'none') {
 //             playMusic_IconEvent()
 //             playMusicItems(audio)
 //         } else {
