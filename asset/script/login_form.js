@@ -6,6 +6,16 @@ closeFormLogin2.addEventListener('click', () => {
     formLoginStatus();
 })
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainFormLogin = document.querySelector('.form_login_main')
+    const loginForm = document.querySelector('.form_login').addEventListener('click', function (event) {
+        if (event.target === loginForm) {
+            formLoginStatus();
+        } 
+    })
+});
+
 closeFormLogin.addEventListener('click', () => {
     formLoginStatus();
 })
@@ -88,11 +98,27 @@ document.querySelector('.forget_pw').addEventListener('click', () => {
 setInterval(updateClock, 500);
 updateClock();
 
+// Create Account
+document.querySelector('.create_account').addEventListener('click', () => {
+    alert('Vui lòng liên hệ Admin để tạo tài khoản!');
+});
+
+//
+const falseLoginForm = document.querySelectorAll('.login_options_false')
+falseLoginForm.forEach(element => {
+    element.addEventListener('click', () => {
+        alert('Chức năng đang được phát triển!');
+    });
+});
+
+
+
+
 //module function
 function formLoginStatus() {
     const statusFormLogin = document.querySelector('.form_login').style.display;
 
-    if (statusFormLogin == 'flex') {
+    if (statusFormLogin === 'flex') {
         document.querySelector('.form_login').style.display = 'none';
     } else {
     document.querySelector('.form_login').style.display = 'flex';
