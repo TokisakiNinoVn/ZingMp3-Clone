@@ -12,10 +12,10 @@ const inforMusicItems= [
         linkSong: "../asset/audio/Thieu_Nien_Hoa_Hong_Remix.mp3",
     },
     {
-        nameSong: "Vô Cảm Giang Thần",
-        nameSinger: "Hoshino Ai",
-        linkImgSong: "../asset/images/Eysia_love.jpg",
-        linkSong: "../asset/img/VoCamGiangThan.mp3",
+        nameSong: "Vô cảm | 无感",
+        nameSinger: "Giang Thần | 江辰",
+        linkImgSong: "./asset/images/Eysia_love.jpg",
+        linkSong: "../asset/audio/VoCamGiangThan.mp3",
     },
     {
         nameSong: "Fool For You (Kastra Remix) [Lyrics Vietsub]",
@@ -150,10 +150,10 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     scrollToTopBtn.classList.remove('nonePlayNavbar');
     document.querySelector('.colab_music').style.paddingBottom = '100px';
 
-    let imageOfSong = document.querySelector('.image_of_song').textContent = inforMusicItems[0].linkImgSong
-    let titleDocument = document.querySelector('.title_document').innerHTML = inforMusicItems[0].nameSong
-    let nameSong = document.querySelector('.name_song--event').textContent = inforMusicItems[0].nameSong
-    let singerName = document.querySelector('.singer-name--event').textContent = inforMusicItems[0].nameSinger
+    document.querySelector('.image_of_song').src = inforMusicItems[0].linkImgSong
+    document.querySelector('.title_document').textContent = inforMusicItems[0].nameSong
+    document.querySelector('.name_song--event').textContent = inforMusicItems[0].nameSong
+    document.querySelector('.singer-name--event').textContent = inforMusicItems[0].nameSinger
 
 
 
@@ -255,7 +255,7 @@ document.getElementById("music_item--1").addEventListener("click", function() {
     //Btn loop music
     const btnLoopMusic = document.getElementById('loop_music_items')
     btnLoopMusic.addEventListener('click', () => {
-        if (btnLoopMusic.classList.contains('loop_music_true')) {
+        if (btnLoopMusic.classList.contains('loop_music_true') || audio.loop == true) {
             btnLoopMusic.classList.remove('loop_music_true')
             audio.loop = false;
         } else {
@@ -264,6 +264,25 @@ document.getElementById("music_item--1").addEventListener("click", function() {
         }
     })
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const favoriteSongMenu = document.querySelector(".favorite_song_menu");
 const closeFavoriteSongMenuIcon = document.querySelector(".close_menu_favorite_song");
@@ -275,17 +294,13 @@ closeFavoriteSongMenuIcon.addEventListener("click", () => {
     favoriteSongMenu.style.display = "none";
 })
 
-
-
+const closeMenuFavoriteSong = document.querySelector(".close_menu_favorite_song");
+closeMenuFavoriteSong.addEventListener("click", () => {
+    favoriteSongMenu.style.display = "none";
+});
 
 const listMusicFavorite = [];
-
 const addMusicFavorite = document.querySelector(".add_to_favo_list--1");
-// const listItemFavoriteSongEvent = document.querySelector(".list_items_favorite_song");
-
-const closeMenuFavoriteSong = document.querySelector(".close_menu_favorite_song");
-// const favoriteSongMenu = document.querySelector(".favorite_song_menu");
-
 addMusicFavorite.addEventListener("click", () => {
     const musicItem1 = {
         linkOfItem: inforMusicItems[0].linkSong,
@@ -297,7 +312,6 @@ addMusicFavorite.addEventListener("click", () => {
     };
 
     listMusicFavorite.push(musicItem1);
-
     const htmlCode = listMusicFavorite.map((musicItem, i) => `
         <div class="media_1infor">
             <div class="media_infor--left">
@@ -325,22 +339,26 @@ addMusicFavorite.addEventListener("click", () => {
 
     listItemFavoriteSongEvent.innerHTML = htmlCode;
     alert("Đã thêm vào danh sách yêu thích");
+    totalLikeSong.textContent = listMusicFavorite.length;
 });
 
 const remoteItemMusic = document.querySelectorAll(".remote_item_music");
-remoteItemMusic.forEach((icon) => {
-    icon.addEventListener("click", (event) => {
-        const id = event.currentTarget.getAttribute("data-id");
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remote_item_music")) {
+        const id = event.target.getAttribute("data-id");
         listMusicFavorite.splice(id - 1, 1);
-        event.currentTarget.closest(".media_1infor").remove();
+        event.target.closest(".media_1infor").remove();
         alert("Đã xóa khỏi danh sách yêu thích");
-    });
+        totalLikeSong.textContent = listMusicFavorite.length;
+    }
 });
 
 
-closeMenuFavoriteSong.addEventListener("click", () => {
-    favoriteSongMenu.style.display = "none";
+const totalLikeSong = document.querySelector(".total_like_song");
+document.addEventListener("DOMContentLoaded", () => {
+    totalLikeSong.textContent = listMusicFavorite.length;
 });
+
 
 
 
