@@ -6,12 +6,15 @@ Các chức năng:
 - scroll to top (Tương thích với các trạng thái của playnavbar)
 - Thêm/Xóa nhạc của danh sách yêu thích.
 - Chức năng đăng nhập (có kiểm tra tài khoản mật khẩu) / Đăng xuất (có lưu lại thông tin giúp đăng nhập lần sau dễ dàng hơn).
+- Update real time.
 -....
 
-Hướng dẫn: Click "List yêu thích" trong mục "Gần đây" để mở danh sách nhạc, click icon play trên item nhạc để play nhạc. Nút đóng trên thanh playnavbar để đóng playbar.
+Hướng dẫn: Click "List yêu thích" trong mục "Gần đây" để mở danh sách nhạc, click icon play trên item nhạc để play nhạc. Nút đóng "x" trên thanh playnavbar để đóng playbar.
 
 
 >> bla..bla
+
+
 Link Project: https://github.com/TokisakiNinoVn/ZingMp3-Clone.
 
 Contacts:
