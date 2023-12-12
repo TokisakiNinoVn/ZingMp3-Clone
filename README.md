@@ -1,5 +1,6 @@
 # ZingMp3-Clone ver-Album: Hoshino Ai.
 I'm clone website zingmp3.vn test skill.
+note: the website does not use responsive.
 
 Các chức năng:
 - Phát, dừng chơi nhạc, lặp bài hát, đóng/hidden playnavbar (Thêm so với zingmp3 web)
